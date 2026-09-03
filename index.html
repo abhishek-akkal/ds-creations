@@ -1,0 +1,1583 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>DS Creations | Handmade with Love</title>
+
+    <meta name="description"
+        content="DS Creations — handmade crochet, traditional décor, spiritual art and personalised gifts.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --ink: #241b17;
+            --muted: #756862;
+            --cream: #fbf7f1;
+            --paper: #fffdf9;
+            --accent: #9b5b3d;
+            --accent2: #d5a25c;
+            --line: #eadfd5;
+            --white: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--cream);
+            color: var(--ink);
+            font-family: "DM Sans", sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: rgba(255, 253, 249, .94);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .nav-inner {
+            max-width: 1280px;
+            margin: auto;
+            min-height: 76px;
+            padding: 12px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 40px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            flex-shrink: 0;
+        }
+
+        .brand-mark {
+            width: 50px;
+            height: 50px;
+
+            object-fit: contain;
+            display: block;
+            flex-shrink: 0;
+        }
+
+        .brand span {
+            font-family: "Playfair Display";
+            font-size: 24px;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .navlinks {
+            display: flex;
+            align-items: center;
+
+            gap: 36px;
+            margin-right: 55px;
+
+            font-size: 16px;
+            color: var(--muted);
+        }
+
+        .navlinks a {
+            position: relative;
+            padding: 8px 0;
+            white-space: nowrap;
+
+            transition: color .2s ease;
+        }
+
+        .navlinks a:hover {
+            color: var(--accent);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            max-width: 1180px;
+            margin: auto;
+
+            padding: 72px 22px 55px;
+
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+
+            gap: 55px;
+            align-items: center;
+        }
+
+        .kicker {
+            color: var(--accent);
+            font-weight: 700;
+
+            letter-spacing: .14em;
+            text-transform: uppercase;
+
+            font-size: 12px;
+        }
+
+        h1 {
+            font: 600 clamp(46px, 7vw, 82px)/.98 "Playfair Display", serif;
+
+            margin: 14px 0 20px;
+
+            letter-spacing: -.04em;
+        }
+
+        .hero p {
+            font-size: 17px;
+            line-height: 1.75;
+
+            color: var(--muted);
+
+            max-width: 570px;
+        }
+
+        .btns {
+            display: flex;
+            gap: 12px;
+
+            flex-wrap: wrap;
+
+            margin-top: 28px;
+        }
+
+        .btn {
+            padding: 13px 20px;
+
+            border-radius: 999px;
+
+            font-weight: 700;
+            font-size: 14px;
+
+            border: 1px solid var(--ink);
+
+            transition: .2s;
+        }
+
+        .btn.primary {
+            background: var(--ink);
+            color: white;
+        }
+
+        .btn.secondary {
+            background: transparent;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .hero-logo {
+            background: var(--white);
+
+            border: 1px solid var(--line);
+
+            border-radius: 36px;
+
+            padding: 35px;
+
+            box-shadow: 0 20px 70px rgba(60, 35, 20, .09);
+
+            text-align: center;
+        }
+
+        .hero-mark {
+            width: min(100%, 430px);
+
+            max-height: 430px;
+
+            object-fit: contain;
+
+            display: block;
+
+            margin: auto;
+
+            border-radius: 24px;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        .section {
+            max-width: 1180px;
+
+            margin: auto;
+
+            padding: 70px 22px;
+        }
+
+        .section-head {
+            display: flex;
+
+            align-items: end;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-bottom: 28px;
+        }
+
+        .section h2 {
+            font: 600 clamp(32px, 5vw, 50px) "Playfair Display";
+
+            margin: 0;
+        }
+
+        .section-head p {
+            color: var(--muted);
+
+            max-width: 520px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           FILTERS
+        ========================= */
+
+        .filters {
+            display: flex;
+
+            gap: 9px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 28px;
+        }
+
+        .filter {
+            border: 1px solid var(--line);
+
+            background: var(--paper);
+
+            padding: 9px 14px;
+
+            border-radius: 999px;
+
+            cursor: pointer;
+
+            font: 600 13px "DM Sans";
+        }
+
+        .filter.active,
+        .filter:hover {
+            background: var(--ink);
+
+            color: white;
+
+            border-color: var(--ink);
+        }
+
+
+        /* =========================
+           PRODUCTS
+        ========================= */
+
+        .grid {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 18px;
+        }
+
+        .product-card {
+            background: var(--paper);
+
+            border: 1px solid var(--line);
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            transition: .25s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow: 0 18px 45px rgba(60, 35, 20, .10);
+        }
+
+        .product-image-wrap {
+            aspect-ratio: 1/1;
+
+            background: #f2ece5;
+
+            overflow: hidden;
+        }
+
+        .product-image-wrap img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: .35s;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.035);
+        }
+
+        .product-info {
+            padding: 17px;
+        }
+
+        .tag {
+            font-size: 10px;
+
+            text-transform: uppercase;
+
+            letter-spacing: .1em;
+
+            color: var(--accent);
+
+            font-weight: 700;
+        }
+
+        .product-info h3 {
+            font: 600 20px "Playfair Display";
+
+            margin: 8px 0 7px;
+        }
+
+        .product-info p {
+            font-size: 13px;
+
+            color: var(--muted);
+
+            line-height: 1.55;
+
+            min-height: 42px;
+
+            margin: 0;
+        }
+
+        .order-link {
+            display: inline-flex;
+
+            margin-top: 14px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            gap: 7px;
+
+            color: var(--accent);
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: var(--ink);
+
+            color: #fff;
+
+            margin-top: 10px;
+        }
+
+        .about-inner {
+            max-width: 1180px;
+
+            margin: auto;
+
+            padding: 72px 22px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+        }
+
+        .about h2 {
+            font: 600 48px "Playfair Display";
+
+            margin: 0 0 15px;
+        }
+
+        .about p {
+            color: #d8ccc5;
+
+            line-height: 1.8;
+        }
+
+        .points {
+            display: grid;
+
+            gap: 15px;
+        }
+
+        .point {
+            border: 1px solid #4b3b34;
+
+            border-radius: 18px;
+
+            padding: 20px;
+        }
+
+        .point strong {
+            display: block;
+
+            margin-bottom: 5px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: #f0e6dc;
+        }
+
+        .contact-box {
+            max-width: 850px;
+
+            margin: auto;
+
+            text-align: center;
+
+            background: var(--paper);
+
+            border: 1px solid var(--line);
+
+            border-radius: 30px;
+
+            padding: 50px 25px;
+        }
+
+        .contact-box h2 {
+            font: 600 46px "Playfair Display";
+
+            margin: 0 0 12px;
+        }
+
+        .contact-box p {
+            color: var(--muted);
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 28px 22px;
+
+            text-align: center;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            border-top: 1px solid var(--line);
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width: 900px) {
+
+            .hero,
+            .about-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero {
+                padding-top: 45px;
+            }
+
+            .nav-inner {
+                padding-left: 22px;
+                padding-right: 22px;
+            }
+
+            .navlinks {
+                gap: 22px;
+                margin-right: 0;
+            }
+        }
+
+
+        @media(max-width: 560px) {
+
+            .navlinks {
+                display: none;
+            }
+
+            .grid {
+                grid-template-columns: 1fr 1fr;
+
+                gap: 12px;
+            }
+
+            .product-info {
+                padding: 12px;
+            }
+
+            .product-info h3 {
+                font-size: 17px;
+            }
+
+            .product-info p {
+                font-size: 12px;
+            }
+
+            .section {
+                padding: 55px 16px;
+            }
+
+            .hero {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .about-inner {
+                padding: 55px 16px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav class="nav">
+
+        <div class="nav-inner">
+
+            <a class="brand" href="#home">
+
+                <img class="brand-mark" src="images/Logo.png" alt="DS Creations logo">
+
+                <span>DS Creations</span>
+
+            </a>
+
+
+            <div class="navlinks">
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#collections">
+                    Collections
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================
+         HOME
+    ========================= -->
+
+    <main id="home">
+
+        <section class="hero">
+
+            <div>
+
+                <div class="kicker">
+                    Handmade • Custom • Heartfelt
+                </div>
+
+
+                <h1>
+                    Made by hand,<br>
+                    made with love.
+                </h1>
+
+
+                <p>
+                    Welcome to <b>DS Creations</b> —
+                    a little world of handmade crochet,
+                    traditional art, décor and thoughtful gifts.
+                    Every creation is crafted with patience,
+                    creativity and a personal touch.
+                </p>
+
+
+                <div class="btns">
+
+                    <a class="btn primary" href="#collections">
+
+                        Explore Creations
+
+                    </a>
+
+
+                    <a class="btn secondary" href="#contact">
+
+                        Customise Yours
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-logo">
+
+                <img class="hero-mark" src="images/Logo.png" alt="DS Creations logo">
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             COLLECTIONS
+        ========================= -->
+
+        <section class="section" id="collections">
+
+
+            <div class="section-head">
+
+                <div>
+
+                    <div class="kicker">
+                        Our work
+                    </div>
+
+                    <h2>
+                        Handmade Collections
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    From delicate crochet pieces to
+                    traditional décor and spiritual art —
+                    explore handmade creations that can
+                    also be customised for you.
+                </p>
+
+            </div>
+
+
+
+            <!-- FILTERS -->
+
+            <div class="filters">
+
+                <button class="filter active" data-filter="All">
+
+                    All
+
+                </button>
+
+
+                <button class="filter" data-filter="Crochet Creations">
+
+                    Crochet
+
+                </button>
+
+
+                <button class="filter" data-filter="Handcrafted Décor">
+
+                    Décor
+
+                </button>
+
+
+                <button class="filter" data-filter="Spiritual Art">
+
+                    Spiritual Art
+
+                </button>
+
+
+                <button class="filter" data-filter="Gift Creations">
+
+                    Gifts
+
+                </button>
+
+
+                <button class="filter" data-filter="Wall Décor">
+
+                    Wall Décor
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =========================
+                 PRODUCT GRID
+            ========================= -->
+
+            <div class="grid">
+
+
+                <!-- PRODUCT 1 -->
+
+                <article class="product-card" data-category="Spiritual Art">
+
+                    <div class="product-image-wrap">
+
+                        <img src="images/Img1.png" alt="Handcrafted Ganesh Decorative Wall Art" loading="lazy">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="tag">
+                            Spiritual Art
+                        </span>
+
+                        <h3>
+                            Ganesh Decorative Wall Art
+                        </h3>
+
+                        <p>
+                            Beautiful handcrafted Ganesh
+                            artwork with intricate decorative
+                            detailing.
+                        </p>
+
+                        <a class="order-link" href="#contact" data-product="Ganesh Decorative Wall Art">
+
+                            Custom Order →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCT 2 -->
+
+                <article class="product-card" data-category="Gift Creations">
+
+                    <div class="product-image-wrap">
+
+                        <img src="images/Img2.png" alt="Handmade Rose Bouquet" loading="lazy">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="tag">
+                            Gift Creations
+                        </span>
+
+                        <h3>
+                            Handmade Rose Bouquet
+                        </h3>
+
+                        <p>
+                            A beautiful handmade rose bouquet,
+                            perfect for gifting and special moments.
+                        </p>
+
+                        <a class="order-link" href="#contact" data-product="Handmade Rose Bouquet">
+
+                            Custom Order →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCT 3 -->
+
+                <article class="product-card" data-category="Spiritual Art">
+
+                    <div class="product-image-wrap">
+
+                        <img src="images/Img3.png" alt="Shri Radha Decorative Wall Art" loading="lazy">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="tag">
+                            Spiritual Art
+                        </span>
+
+                        <h3>
+                            Shri Radha Decorative Art
+                        </h3>
+
+                        <p>
+                            Handcrafted devotional décor featuring
+                            an elegant Shri Radha design.
+                        </p>
+
+                        <a class="order-link" href="#contact" data-product="Shri Radha Decorative Art">
+
+                            Custom Order →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCT 4 -->
+
+                <article class="product-card" data-category="Spiritual Art">
+
+                    <div class="product-image-wrap">
+
+                        <img src="images/Img4.png" alt="Hanuman Wall Art" loading="lazy">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="tag">
+                            Spiritual Art
+                        </span>
+
+                        <h3>
+                            Hanuman Wall Art
+                        </h3>
+
+                        <p>
+                            Detailed handcrafted Hanuman artwork
+                            created for devotional home décor.
+                        </p>
+
+                        <a class="order-link" href="#contact" data-product="Hanuman Wall Art">
+
+                            Custom Order →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCT 5 -->
+
+                <article class="product-card" data-category="Handcrafted Décor">
+
+                    <div class="product-image-wrap">
+
+                        <img src="images/Img5.png" alt="Kolam Wooden Chowki" loading="lazy">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="tag">
+                            Handcrafted Décor
+                        </span>
+
+                        <h3>
+                            Kolam Wooden Chowki
+                        </h3>
+
+                        <p>
+                            Traditional wooden chowki featuring
+                            beautiful handcrafted kolam artwork.
+                        </p>
+
+                        <a class="order-link" href="#contact" data-product="Kolam Wooden Chowki">
+
+                            Custom Order →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCT 6 -->
+
+                <article class="product-card" data-category="Handcrafted Décor">
+
+                    <div class="product-image-wrap">
+
+                        <img src="images/Img6.png" alt="Handcrafted Kolam Coaster Set" loading="lazy">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="tag">
+                            Handcrafted Décor
+                        </span>
+
+                        <h3>
+                            Kolam Coaster Set
+                        </h3>
+
+                        <p>
+                            Set of handcrafted decorative coasters
+                            inspired by traditional kolam patterns.
+                        </p>
+
+                        <a class="order-link" href="#contact" data-product="Kolam Coaster Set">
+
+                            Custom Order →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCT 7 -->
+
+                <article class="product-card" data-category="Spiritual Art">
+
+                    <div class="product-image-wrap">
+
+                        <img src="images/Img7.png" alt="Hanuman Mandala Wall Art" loading="lazy">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="tag">
+                            Spiritual Art
+                        </span>
+
+                        <h3>
+                            Hanuman Mandala Wall Art
+                        </h3>
+
+                        <p>
+                            Detailed devotional Hanuman artwork
+                            surrounded by an intricate decorative border.
+                        </p>
+
+                        <a class="order-link" href="#contact" data-product="Hanuman Mandala Wall Art">
+
+                            Custom Order →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCT 8 -->
+
+                <article class="product-card" data-category="Gift Creations">
+
+                    <div class="product-image-wrap">
+
+                        <img src="images/Img8.png" alt="Personalised Name Plate" loading="lazy">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="tag">
+                            Gift Creations
+                        </span>
+
+                        <h3>
+                            Personalised Name Plate
+                        </h3>
+
+                        <p>
+                            Custom handmade name décor designed
+                            with your chosen name and colours.
+                        </p>
+
+                        <a class="order-link" href="#contact" data-product="Personalised Name Plate">
+
+                            Custom Order →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCT 9 -->
+
+                <article class="product-card" data-category="Crochet Creations">
+
+                    <div class="product-image-wrap">
+
+                        <img src="images/Img9.png" alt="Crochet Flower Pins" loading="lazy">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="tag">
+                            Crochet Creations
+                        </span>
+
+                        <h3>
+                            Crochet Flower Pins
+                        </h3>
+
+                        <p>
+                            Colourful handmade crochet flower pins
+                            with delicate floral details.
+                        </p>
+
+                        <a class="order-link" href="#contact" data-product="Crochet Flower Pins">
+
+                            Custom Order →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCT 10 -->
+
+                <article class="product-card" data-category="Crochet Creations">
+
+                    <div class="product-image-wrap">
+
+                        <img src="images/Img10.png" alt="Crochet Flower Hair Clips" loading="lazy">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="tag">
+                            Crochet Creations
+                        </span>
+
+                        <h3>
+                            Crochet Flower Hair Clips
+                        </h3>
+
+                        <p>
+                            Cute handmade crochet flower clips
+                            finished with beautiful pearl details.
+                        </p>
+
+                        <a class="order-link" href="#contact" data-product="Crochet Flower Hair Clips">
+
+                            Custom Order →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCT 11 -->
+
+                <article class="product-card" data-category="Wall Décor">
+
+                    <div class="product-image-wrap">
+
+                        <img src="images/Img11.png" alt="Handmade Floral Hanging" loading="lazy">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="tag">
+                            Wall Décor
+                        </span>
+
+                        <h3>
+                            Handmade Floral Hanging
+                        </h3>
+
+                        <p>
+                            Bright handmade floral décor that adds
+                            a cheerful touch to your walls and spaces.
+                        </p>
+
+                        <a class="order-link" href="#contact" data-product="Handmade Floral Hanging">
+
+                            Custom Order →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCT 12 -->
+
+                <article class="product-card" data-category="Spiritual Art">
+
+                    <div class="product-image-wrap">
+
+                        <img src="images/Img12.png" alt="Shivling Decorative Wall Art" loading="lazy">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="tag">
+                            Spiritual Art
+                        </span>
+
+                        <h3>
+                            Shivling Decorative Art
+                        </h3>
+
+                        <p>
+                            Handcrafted Shivling décor with
+                            a traditional lotus-inspired design.
+                        </p>
+
+                        <a class="order-link" href="#contact" data-product="Shivling Decorative Art">
+
+                            Custom Order →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCT 13 -->
+
+                <article class="product-card" data-category="Wall Décor">
+
+                    <div class="product-image-wrap">
+
+                        <img src="images/Img13.png" alt="Buddha Wall Hanging" loading="lazy">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="tag">
+                            Wall Décor
+                        </span>
+
+                        <h3>
+                            Buddha Wall Hanging
+                        </h3>
+
+                        <p>
+                            Peaceful handmade Buddha décor
+                            designed to bring a calm feel to your space.
+                        </p>
+
+                        <a class="order-link" href="#contact" data-product="Buddha Wall Hanging">
+
+                            Custom Order →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCT 14 -->
+
+                <article class="product-card" data-category="Spiritual Art">
+
+                    <div class="product-image-wrap">
+
+                        <img src="images/Img14.png" alt="Decorative Lotus Diya" loading="lazy">
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="tag">
+                            Spiritual Art
+                        </span>
+
+                        <h3>
+                            Decorative Lotus Diya
+                        </h3>
+
+                        <p>
+                            Beautiful handcrafted lotus diya décor
+                            with a traditional festive touch.
+                        </p>
+
+                        <a class="order-link" href="#contact" data-product="Decorative Lotus Diya">
+
+                            Custom Order →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ABOUT
+        ========================= -->
+
+        <section class="about" id="about">
+
+            <div class="about-inner">
+
+                <div>
+
+                    <div class="kicker" style="color:#d5a25c">
+
+                        About us
+
+                    </div>
+
+
+                    <h2>
+                        Little details.<br>
+                        Big feelings.
+                    </h2>
+
+
+                    <p>
+                        DS Creations is all about turning
+                        simple materials into meaningful pieces.
+                        Whether you're decorating your home,
+                        celebrating a festival or gifting someone
+                        special, our handmade creations are made
+                        to feel personal.
+                    </p>
+
+                </div>
+
+
+                <div class="points">
+
+                    <div class="point">
+
+                        <strong>
+                            ♡ Handmade
+                        </strong>
+
+                        <span>
+                            Each piece is crafted with care
+                            rather than mass-produced.
+                        </span>
+
+                    </div>
+
+
+                    <div class="point">
+
+                        <strong>
+                            ✦ Customisable
+                        </strong>
+
+                        <span>
+                            Colours, designs and gift ideas
+                            can be discussed for custom orders.
+                        </span>
+
+                    </div>
+
+
+                    <div class="point">
+
+                        <strong>
+                            ✿ Made for gifting
+                        </strong>
+
+                        <span>
+                            Thoughtful handmade pieces for
+                            birthdays, festivals and special moments.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CONTACT
+        ========================= -->
+
+        <section class="section contact" id="contact">
+
+            <div class="contact-box">
+
+                <div class="kicker">
+                    Let's create something
+                </div>
+
+
+                <h2>
+                    Have an idea in mind?
+                </h2>
+
+
+                <p>
+                    Tell us what you want to customise.
+                    For custom orders and enquiries,
+                    contact us on WhatsApp or Instagram.
+                </p>
+
+
+                <div class="btns" style="justify-content:center">
+
+
+                    <a class="btn primary" href="https://wa.me/919699608447" target="_blank" rel="noopener">
+
+                        WhatsApp · 9699608447
+
+                    </a>
+
+
+                    <a class="btn primary" href="https://wa.me/917769872020" target="_blank" rel="noopener">
+
+                        WhatsApp · 7769872020
+
+                    </a>
+
+
+                    <a class="btn secondary" href="https://www.instagram.com/_ds_creation_20/" target="_blank"
+                        rel="noopener">
+
+                        Instagram · @_ds_creations
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        © 2026 DS Creations · Handmade with love
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        /* FILTER SYSTEM */
+
+        const filters =
+            document.querySelectorAll('.filter');
+
+        const cards =
+            document.querySelectorAll('.product-card');
+
+
+        filters.forEach(btn => {
+
+            btn.addEventListener('click', () => {
+
+                filters.forEach(b =>
+                    b.classList.remove('active')
+                );
+
+                btn.classList.add('active');
+
+
+                const filter =
+                    btn.dataset.filter;
+
+
+                cards.forEach(card => {
+
+                    if (
+                        filter === 'All' ||
+                        card.dataset.category === filter
+                    ) {
+
+                        card.style.display = '';
+
+                    } else {
+
+                        card.style.display = 'none';
+
+                    }
+
+                });
+
+            });
+
+        });
+
+
+
+        /* PRODUCT → WHATSAPP */
+
+        document
+            .querySelectorAll('.order-link')
+            .forEach(link => {
+
+                link.addEventListener('click', e => {
+
+                    e.preventDefault();
+
+
+                    const product =
+                        link.dataset.product;
+
+
+                    const message =
+                        encodeURIComponent(
+
+                            "Hi DS Creations! I am interested in: "
+                            + product +
+                            ". I would like to know the price and customization options."
+
+                        );
+
+
+                    window.open(
+
+                        "https://wa.me/919699608447?text="
+                        + message,
+
+                        "_blank"
+
+                    );
+
+                });
+
+            });
+
+    </script>
+
+</body>
+
+</html>
