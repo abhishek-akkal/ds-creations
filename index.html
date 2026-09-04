@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>DS Creations | Handmade with Love</title>
 
@@ -12,11 +12,12 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" type="image/png" href="images/Logo.png">
 
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
         rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="images/Logo.png">
 
     <style>
         :root {
@@ -25,9 +26,8 @@
             --cream: #fbf7f1;
             --paper: #fffdf9;
             --accent: #9b5b3d;
-            --accent2: #d5a25c;
             --line: #eadfd5;
-            --white: #fff;
+            --white: #ffffff;
         }
 
         * {
@@ -50,7 +50,6 @@
             text-decoration: none;
         }
 
-
         /* =========================
            NAVBAR
         ========================= */
@@ -58,46 +57,56 @@
         .nav {
             position: sticky;
             top: 0;
-            z-index: 20;
-            background: rgba(255, 253, 249, .94);
+            z-index: 100;
+
+            background: rgba(255, 253, 249, 0.97);
             backdrop-filter: blur(12px);
+
             border-bottom: 1px solid var(--line);
         }
 
         .nav-inner {
-            max-width: 1280px;
-            margin: auto;
+            width: calc(100% - 64px);
+            max-width: 1325px;
+
             min-height: 76px;
-            padding: 12px 20px;
+
+            margin: 0 auto;
+            padding: 10px 0;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
 
-            gap: 40px;
+            gap: 50px;
         }
 
         .brand {
             display: flex;
             align-items: center;
+
             gap: 16px;
 
             flex-shrink: 0;
         }
 
         .brand-mark {
-            width: 50px;
-            height: 50px;
+            width: 52px;
+            height: 52px;
 
             object-fit: contain;
+
             display: block;
-            flex-shrink: 0;
         }
 
         .brand span {
-            font-family: "Playfair Display";
-            font-size: 24px;
+            font-family: "Playfair Display", serif;
+
+            font-size: 25px;
+            font-weight: 600;
+
             line-height: 1;
+
             white-space: nowrap;
         }
 
@@ -105,19 +114,21 @@
             display: flex;
             align-items: center;
 
-            gap: 36px;
-            margin-right: 55px;
+            gap: 38px;
 
-            font-size: 16px;
+            margin-right: 25px;
+
+            font-size: 17px;
+
             color: var(--muted);
         }
 
         .navlinks a {
-            position: relative;
             padding: 8px 0;
+
             white-space: nowrap;
 
-            transition: color .2s ease;
+            transition: color 0.2s ease;
         }
 
         .navlinks a:hover {
@@ -130,48 +141,58 @@
         ========================= */
 
         .hero {
-            max-width: 1180px;
-            margin: auto;
+            width: calc(100% - 64px);
+            max-width: 1325px;
 
-            padding: 72px 22px 55px;
+            margin: 0 auto;
+
+            padding: 82px 0 72px;
 
             display: grid;
-            grid-template-columns: 1.05fr .95fr;
 
-            gap: 55px;
+            grid-template-columns: 1.05fr 0.95fr;
+
+            gap: 65px;
+
             align-items: center;
         }
 
         .kicker {
             color: var(--accent);
+
             font-weight: 700;
 
-            letter-spacing: .14em;
+            letter-spacing: 0.14em;
+
             text-transform: uppercase;
 
             font-size: 12px;
         }
 
         h1 {
-            font: 600 clamp(46px, 7vw, 82px)/.98 "Playfair Display", serif;
+            font: 600 clamp(48px, 5.5vw, 78px) / 0.98 "Playfair Display", serif;
 
             margin: 14px 0 20px;
 
-            letter-spacing: -.04em;
+            letter-spacing: -0.04em;
         }
 
         .hero p {
             font-size: 17px;
+
             line-height: 1.75;
 
             color: var(--muted);
 
-            max-width: 570px;
+            max-width: 590px;
+
+            margin: 0;
         }
 
         .btns {
             display: flex;
-            gap: 12px;
+
+            gap: 14px;
 
             flex-wrap: wrap;
 
@@ -179,20 +200,22 @@
         }
 
         .btn {
-            padding: 13px 20px;
+            padding: 14px 21px;
 
             border-radius: 999px;
 
             font-weight: 700;
+
             font-size: 14px;
 
             border: 1px solid var(--ink);
 
-            transition: .2s;
+            transition: 0.2s ease;
         }
 
         .btn.primary {
             background: var(--ink);
+
             color: white;
         }
 
@@ -211,17 +234,20 @@
 
             border-radius: 36px;
 
-            padding: 35px;
+            padding: 32px;
 
-            box-shadow: 0 20px 70px rgba(60, 35, 20, .09);
+            box-shadow:
+                0 20px 70px rgba(60, 35, 20, 0.09);
 
             text-align: center;
         }
 
         .hero-mark {
-            width: min(100%, 430px);
+            width: 100%;
 
-            max-height: 430px;
+            max-width: 470px;
+
+            max-height: 470px;
 
             object-fit: contain;
 
@@ -234,40 +260,47 @@
 
 
         /* =========================
-           SECTIONS
+           COLLECTION SECTION
         ========================= */
 
         .section {
-            max-width: 1180px;
+            width: calc(100% - 64px);
 
-            margin: auto;
+            max-width: 1325px;
 
-            padding: 70px 22px;
+            margin: 0 auto;
+
+            padding: 72px 0;
         }
 
         .section-head {
             display: flex;
 
             align-items: end;
+
             justify-content: space-between;
 
-            gap: 20px;
+            gap: 60px;
 
-            margin-bottom: 28px;
+            margin-bottom: 30px;
         }
 
         .section h2 {
-            font: 600 clamp(32px, 5vw, 50px) "Playfair Display";
+            font: 600 clamp(38px, 4.5vw, 58px) "Playfair Display", serif;
 
             margin: 0;
+
+            letter-spacing: -0.025em;
         }
 
         .section-head p {
             color: var(--muted);
 
-            max-width: 520px;
+            max-width: 590px;
 
-            line-height: 1.6;
+            line-height: 1.65;
+
+            margin: 0;
         }
 
 
@@ -278,11 +311,11 @@
         .filters {
             display: flex;
 
-            gap: 9px;
+            gap: 10px;
 
             flex-wrap: wrap;
 
-            margin-bottom: 28px;
+            margin-bottom: 32px;
         }
 
         .filter {
@@ -290,13 +323,15 @@
 
             background: var(--paper);
 
-            padding: 9px 14px;
+            padding: 11px 18px;
 
             border-radius: 999px;
 
             cursor: pointer;
 
-            font: 600 13px "DM Sans";
+            font: 600 14px "DM Sans", sans-serif;
+
+            transition: 0.2s ease;
         }
 
         .filter.active,
@@ -310,16 +345,22 @@
 
 
         /* =========================
-           PRODUCTS
+           PRODUCT GRID
         ========================= */
 
         .grid {
             display: grid;
 
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns:
+                repeat(4, minmax(0, 1fr));
 
-            gap: 18px;
+            gap: 24px;
         }
+
+
+        /* =========================
+           PRODUCT CARD
+        ========================= */
 
         .product-card {
             background: var(--paper);
@@ -330,17 +371,22 @@
 
             overflow: hidden;
 
-            transition: .25s;
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
         .product-card:hover {
             transform: translateY(-5px);
 
-            box-shadow: 0 18px 45px rgba(60, 35, 20, .10);
+            box-shadow:
+                0 18px 45px rgba(60, 35, 20, 0.10);
         }
 
         .product-image-wrap {
-            aspect-ratio: 1/1;
+            width: 100%;
+
+            aspect-ratio: 1 / 1;
 
             background: #f2ece5;
 
@@ -355,15 +401,20 @@
 
             display: block;
 
-            transition: .35s;
+            transition: transform 0.35s ease;
         }
 
-        .product-card:hover img {
+        .product-card:hover .product-image-wrap img {
             transform: scale(1.035);
         }
 
+
+        /* =========================
+           PRODUCT INFO
+        ========================= */
+
         .product-info {
-            padding: 17px;
+            padding: 20px;
         }
 
         .tag {
@@ -371,7 +422,7 @@
 
             text-transform: uppercase;
 
-            letter-spacing: .1em;
+            letter-spacing: 0.1em;
 
             color: var(--accent);
 
@@ -379,19 +430,21 @@
         }
 
         .product-info h3 {
-            font: 600 20px "Playfair Display";
+            font: 600 21px "Playfair Display", serif;
 
-            margin: 8px 0 7px;
+            margin: 9px 0 8px;
+
+            line-height: 1.2;
         }
 
         .product-info p {
-            font-size: 13px;
+            font-size: 14px;
 
             color: var(--muted);
 
             line-height: 1.55;
 
-            min-height: 42px;
+            min-height: 44px;
 
             margin: 0;
         }
@@ -399,15 +452,21 @@
         .order-link {
             display: inline-flex;
 
-            margin-top: 14px;
+            margin-top: 17px;
 
-            font-size: 13px;
+            font-size: 14px;
 
             font-weight: 700;
 
             gap: 7px;
 
             color: var(--accent);
+
+            transition: color 0.2s ease;
+        }
+
+        .order-link:hover {
+            color: var(--ink);
         }
 
 
@@ -418,41 +477,47 @@
         .about {
             background: var(--ink);
 
-            color: #fff;
+            color: white;
 
             margin-top: 10px;
         }
 
         .about-inner {
-            max-width: 1180px;
+            width: calc(100% - 64px);
 
-            margin: auto;
+            max-width: 1325px;
 
-            padding: 72px 22px;
+            margin: 0 auto;
+
+            padding: 78px 0;
 
             display: grid;
 
             grid-template-columns: 1fr 1fr;
 
-            gap: 60px;
+            gap: 70px;
         }
 
         .about h2 {
-            font: 600 48px "Playfair Display";
+            font: 600 52px "Playfair Display", serif;
 
-            margin: 0 0 15px;
+            margin: 0 0 18px;
         }
 
         .about p {
             color: #d8ccc5;
 
             line-height: 1.8;
+
+            margin: 0;
+
+            max-width: 620px;
         }
 
         .points {
             display: grid;
 
-            gap: 15px;
+            gap: 16px;
         }
 
         .point {
@@ -460,13 +525,13 @@
 
             border-radius: 18px;
 
-            padding: 20px;
+            padding: 21px;
         }
 
         .point strong {
             display: block;
 
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
 
 
@@ -479,7 +544,7 @@
         }
 
         .contact-box {
-            max-width: 850px;
+            max-width: 900px;
 
             margin: auto;
 
@@ -491,19 +556,23 @@
 
             border-radius: 30px;
 
-            padding: 50px 25px;
+            padding: 55px 30px;
         }
 
         .contact-box h2 {
-            font: 600 46px "Playfair Display";
+            font: 600 48px "Playfair Display", serif;
 
-            margin: 0 0 12px;
+            margin: 0 0 14px;
         }
 
         .contact-box p {
             color: var(--muted);
 
             line-height: 1.7;
+
+            margin: 0 auto;
+
+            max-width: 740px;
         }
 
 
@@ -512,7 +581,7 @@
         ========================= */
 
         footer {
-            padding: 28px 22px;
+            padding: 28px 20px;
 
             text-align: center;
 
@@ -528,7 +597,18 @@
            RESPONSIVE
         ========================= */
 
-        @media(max-width: 900px) {
+        @media (max-width: 1400px) {
+
+            .nav-inner,
+            .hero,
+            .section,
+            .about-inner {
+                width: calc(100% - 64px);
+            }
+        }
+
+
+        @media (max-width: 1000px) {
 
             .hero,
             .about-inner {
@@ -536,39 +616,72 @@
             }
 
             .grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+                gap: 20px;
             }
 
-            .hero {
-                padding-top: 45px;
-            }
+            .section-head {
+                align-items: flex-start;
 
-            .nav-inner {
-                padding-left: 22px;
-                padding-right: 22px;
+                flex-direction: column;
+
+                gap: 20px;
             }
 
             .navlinks {
-                gap: 22px;
+                gap: 25px;
+
                 margin-right: 0;
             }
         }
 
 
-        @media(max-width: 560px) {
+        @media (max-width: 650px) {
+
+            .nav-inner {
+                width: calc(100% - 32px);
+
+                min-height: 70px;
+            }
 
             .navlinks {
                 display: none;
             }
 
+            .brand-mark {
+                width: 46px;
+                height: 46px;
+            }
+
+            .brand span {
+                font-size: 22px;
+            }
+
+            .hero,
+            .section,
+            .about-inner {
+                width: calc(100% - 32px);
+            }
+
+            .hero {
+                padding: 50px 0 60px;
+            }
+
+            .hero-logo {
+                padding: 20px;
+            }
+
             .grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
 
                 gap: 12px;
             }
 
             .product-info {
-                padding: 12px;
+                padding: 14px;
             }
 
             .product-info h3 {
@@ -579,17 +692,20 @@
                 font-size: 12px;
             }
 
-            .section {
-                padding: 55px 16px;
-            }
-
-            .hero {
-                padding-left: 16px;
-                padding-right: 16px;
-            }
-
             .about-inner {
-                padding: 55px 16px;
+                padding: 60px 0;
+            }
+
+            .about h2 {
+                font-size: 40px;
+            }
+
+            .contact-box {
+                padding: 42px 18px;
+            }
+
+            .contact-box h2 {
+                font-size: 38px;
             }
         }
     </style>
@@ -597,7 +713,6 @@
 
 
 <body>
-
 
     <!-- =========================
          NAVBAR
@@ -641,7 +756,6 @@
     </nav>
 
 
-
     <!-- =========================
          HOME
     ========================= -->
@@ -656,35 +770,27 @@
                     Handmade • Custom • Heartfelt
                 </div>
 
-
                 <h1>
                     Made by hand,<br>
                     made with love.
                 </h1>
 
-
                 <p>
-                    Welcome to <b>DS Creations</b> —
-                    a little world of handmade crochet,
-                    traditional art, décor and thoughtful gifts.
-                    Every creation is crafted with patience,
-                    creativity and a personal touch.
+                    Welcome to <b>DS Creations</b> — a little world
+                    of handmade crochet, traditional art, décor and
+                    thoughtful gifts. Every creation is crafted with
+                    patience, creativity and a personal touch.
                 </p>
 
 
                 <div class="btns">
 
                     <a class="btn primary" href="#collections">
-
                         Explore Creations
-
                     </a>
 
-
                     <a class="btn secondary" href="#contact">
-
                         Customise Yours
-
                     </a>
 
                 </div>
@@ -701,20 +807,18 @@
         </section>
 
 
-
         <!-- =========================
              COLLECTIONS
         ========================= -->
 
         <section class="section" id="collections">
 
-
             <div class="section-head">
 
                 <div>
 
                     <div class="kicker">
-                        Our work
+                        Our Work
                     </div>
 
                     <h2>
@@ -725,82 +829,61 @@
 
 
                 <p>
-                    From delicate crochet pieces to
-                    traditional décor and spiritual art —
-                    explore handmade creations that can
-                    also be customised for you.
+                    From delicate crochet pieces to traditional
+                    décor and spiritual art — explore handmade
+                    creations that can also be customised for you.
                 </p>
 
             </div>
 
 
-
-            <!-- FILTERS -->
+            <!-- FILTER BUTTONS -->
 
             <div class="filters">
 
                 <button class="filter active" data-filter="All">
-
                     All
-
                 </button>
-
 
                 <button class="filter" data-filter="Crochet Creations">
-
                     Crochet
-
                 </button>
-
 
                 <button class="filter" data-filter="Handcrafted Décor">
-
                     Décor
-
                 </button>
-
 
                 <button class="filter" data-filter="Spiritual Art">
-
                     Spiritual Art
-
                 </button>
-
 
                 <button class="filter" data-filter="Gift Creations">
-
                     Gifts
-
                 </button>
 
-
                 <button class="filter" data-filter="Wall Décor">
-
                     Wall Décor
-
                 </button>
 
             </div>
 
 
-
             <!-- =========================
-                 PRODUCT GRID
+                 PRODUCTS
             ========================= -->
 
             <div class="grid">
 
 
-                <!-- PRODUCT 1 -->
+                <!-- 1 -->
 
                 <article class="product-card" data-category="Spiritual Art">
 
                     <div class="product-image-wrap">
 
-                        <img src="images/Img1.png" alt="Handcrafted Ganesh Decorative Wall Art" loading="lazy">
+                        <img src="images/Img1.png" alt="Ganesh Decorative Wall Art" loading="lazy">
 
                     </div>
-
 
                     <div class="product-info">
 
@@ -813,15 +896,12 @@
                         </h3>
 
                         <p>
-                            Beautiful handcrafted Ganesh
-                            artwork with intricate decorative
-                            detailing.
+                            Beautiful handcrafted Ganesh artwork
+                            with intricate decorative detailing.
                         </p>
 
                         <a class="order-link" href="#contact" data-product="Ganesh Decorative Wall Art">
-
                             Custom Order →
-
                         </a>
 
                     </div>
@@ -829,8 +909,7 @@
                 </article>
 
 
-
-                <!-- PRODUCT 2 -->
+                <!-- 2 -->
 
                 <article class="product-card" data-category="Gift Creations">
 
@@ -839,7 +918,6 @@
                         <img src="images/Img2.png" alt="Handmade Rose Bouquet" loading="lazy">
 
                     </div>
-
 
                     <div class="product-info">
 
@@ -857,9 +935,7 @@
                         </p>
 
                         <a class="order-link" href="#contact" data-product="Handmade Rose Bouquet">
-
                             Custom Order →
-
                         </a>
 
                     </div>
@@ -867,17 +943,15 @@
                 </article>
 
 
-
-                <!-- PRODUCT 3 -->
+                <!-- 3 -->
 
                 <article class="product-card" data-category="Spiritual Art">
 
                     <div class="product-image-wrap">
 
-                        <img src="images/Img3.png" alt="Shri Radha Decorative Wall Art" loading="lazy">
+                        <img src="images/Img3.png" alt="Shri Radha Decorative Art" loading="lazy">
 
                     </div>
-
 
                     <div class="product-info">
 
@@ -895,9 +969,7 @@
                         </p>
 
                         <a class="order-link" href="#contact" data-product="Shri Radha Decorative Art">
-
                             Custom Order →
-
                         </a>
 
                     </div>
@@ -905,8 +977,7 @@
                 </article>
 
 
-
-                <!-- PRODUCT 4 -->
+                <!-- 4 -->
 
                 <article class="product-card" data-category="Spiritual Art">
 
@@ -915,7 +986,6 @@
                         <img src="images/Img4.png" alt="Hanuman Wall Art" loading="lazy">
 
                     </div>
-
 
                     <div class="product-info">
 
@@ -933,9 +1003,7 @@
                         </p>
 
                         <a class="order-link" href="#contact" data-product="Hanuman Wall Art">
-
                             Custom Order →
-
                         </a>
 
                     </div>
@@ -943,8 +1011,7 @@
                 </article>
 
 
-
-                <!-- PRODUCT 5 -->
+                <!-- 5 -->
 
                 <article class="product-card" data-category="Handcrafted Décor">
 
@@ -953,7 +1020,6 @@
                         <img src="images/Img5.png" alt="Kolam Wooden Chowki" loading="lazy">
 
                     </div>
-
 
                     <div class="product-info">
 
@@ -971,9 +1037,7 @@
                         </p>
 
                         <a class="order-link" href="#contact" data-product="Kolam Wooden Chowki">
-
                             Custom Order →
-
                         </a>
 
                     </div>
@@ -981,17 +1045,15 @@
                 </article>
 
 
-
-                <!-- PRODUCT 6 -->
+                <!-- 6 -->
 
                 <article class="product-card" data-category="Handcrafted Décor">
 
                     <div class="product-image-wrap">
 
-                        <img src="images/Img6.png" alt="Handcrafted Kolam Coaster Set" loading="lazy">
+                        <img src="images/Img6.png" alt="Kolam Coaster Set" loading="lazy">
 
                     </div>
-
 
                     <div class="product-info">
 
@@ -1004,14 +1066,12 @@
                         </h3>
 
                         <p>
-                            Set of handcrafted decorative coasters
-                            inspired by traditional kolam patterns.
+                            Traditional-inspired handcrafted
+                            coasters with beautiful kolam patterns.
                         </p>
 
                         <a class="order-link" href="#contact" data-product="Kolam Coaster Set">
-
                             Custom Order →
-
                         </a>
 
                     </div>
@@ -1019,17 +1079,15 @@
                 </article>
 
 
-
-                <!-- PRODUCT 7 -->
+                <!-- 7 -->
 
                 <article class="product-card" data-category="Spiritual Art">
 
                     <div class="product-image-wrap">
 
-                        <img src="images/Img7.png" alt="Hanuman Mandala Wall Art" loading="lazy">
+                        <img src="images/Img7.png" alt="Hanuman Decorative Artwork" loading="lazy">
 
                     </div>
-
 
                     <div class="product-info">
 
@@ -1038,18 +1096,16 @@
                         </span>
 
                         <h3>
-                            Hanuman Mandala Wall Art
+                            Hanuman Decorative Artwork
                         </h3>
 
                         <p>
-                            Detailed devotional Hanuman artwork
-                            surrounded by an intricate decorative border.
+                            Detailed handcrafted devotional artwork
+                            with an intricate traditional design.
                         </p>
 
-                        <a class="order-link" href="#contact" data-product="Hanuman Mandala Wall Art">
-
+                        <a class="order-link" href="#contact" data-product="Hanuman Decorative Artwork">
                             Custom Order →
-
                         </a>
 
                     </div>
@@ -1057,17 +1113,15 @@
                 </article>
 
 
-
-                <!-- PRODUCT 8 -->
+                <!-- 8 -->
 
                 <article class="product-card" data-category="Gift Creations">
 
                     <div class="product-image-wrap">
 
-                        <img src="images/Img8.png" alt="Personalised Name Plate" loading="lazy">
+                        <img src="images/Img8.png" alt="Personalised Name Decoration" loading="lazy">
 
                     </div>
-
 
                     <div class="product-info">
 
@@ -1076,18 +1130,16 @@
                         </span>
 
                         <h3>
-                            Personalised Name Plate
+                            Personalised Name Decoration
                         </h3>
 
                         <p>
-                            Custom handmade name décor designed
-                            with your chosen name and colours.
+                            Custom handmade décor designed with
+                            your chosen name and colours.
                         </p>
 
-                        <a class="order-link" href="#contact" data-product="Personalised Name Plate">
-
+                        <a class="order-link" href="#contact" data-product="Personalised Name Decoration">
                             Custom Order →
-
                         </a>
 
                     </div>
@@ -1095,8 +1147,7 @@
                 </article>
 
 
-
-                <!-- PRODUCT 9 -->
+                <!-- 9 -->
 
                 <article class="product-card" data-category="Crochet Creations">
 
@@ -1105,7 +1156,6 @@
                         <img src="images/Img9.png" alt="Crochet Flower Pins" loading="lazy">
 
                     </div>
-
 
                     <div class="product-info">
 
@@ -1123,9 +1173,7 @@
                         </p>
 
                         <a class="order-link" href="#contact" data-product="Crochet Flower Pins">
-
                             Custom Order →
-
                         </a>
 
                     </div>
@@ -1133,8 +1181,7 @@
                 </article>
 
 
-
-                <!-- PRODUCT 10 -->
+                <!-- 10 -->
 
                 <article class="product-card" data-category="Crochet Creations">
 
@@ -1143,7 +1190,6 @@
                         <img src="images/Img10.png" alt="Crochet Flower Hair Clips" loading="lazy">
 
                     </div>
-
 
                     <div class="product-info">
 
@@ -1161,9 +1207,7 @@
                         </p>
 
                         <a class="order-link" href="#contact" data-product="Crochet Flower Hair Clips">
-
                             Custom Order →
-
                         </a>
 
                     </div>
@@ -1171,17 +1215,15 @@
                 </article>
 
 
-
-                <!-- PRODUCT 11 -->
+                <!-- 11 -->
 
                 <article class="product-card" data-category="Wall Décor">
 
                     <div class="product-image-wrap">
 
-                        <img src="images/Img11.png" alt="Handmade Floral Hanging" loading="lazy">
+                        <img src="images/Img11.png" alt="Floral Hanging" loading="lazy">
 
                     </div>
-
 
                     <div class="product-info">
 
@@ -1190,18 +1232,16 @@
                         </span>
 
                         <h3>
-                            Handmade Floral Hanging
+                            Floral Hanging
                         </h3>
 
                         <p>
-                            Bright handmade floral décor that adds
-                            a cheerful touch to your walls and spaces.
+                            Bright handmade floral hanging décor
+                            for a cheerful decorative touch.
                         </p>
 
-                        <a class="order-link" href="#contact" data-product="Handmade Floral Hanging">
-
+                        <a class="order-link" href="#contact" data-product="Floral Hanging">
                             Custom Order →
-
                         </a>
 
                     </div>
@@ -1209,17 +1249,15 @@
                 </article>
 
 
-
-                <!-- PRODUCT 12 -->
+                <!-- 12 -->
 
                 <article class="product-card" data-category="Spiritual Art">
 
                     <div class="product-image-wrap">
 
-                        <img src="images/Img12.png" alt="Shivling Decorative Wall Art" loading="lazy">
+                        <img src="images/Img12.png" alt="Shubh Labh Art" loading="lazy">
 
                     </div>
-
 
                     <div class="product-info">
 
@@ -1228,18 +1266,16 @@
                         </span>
 
                         <h3>
-                            Shivling Decorative Art
+                            Shubh Labh Art
                         </h3>
 
                         <p>
-                            Handcrafted Shivling décor with
-                            a traditional lotus-inspired design.
+                            Festive handcrafted Shubh Labh
+                            decorative artwork.
                         </p>
 
-                        <a class="order-link" href="#contact" data-product="Shivling Decorative Art">
-
+                        <a class="order-link" href="#contact" data-product="Shubh Labh Art">
                             Custom Order →
-
                         </a>
 
                     </div>
@@ -1247,55 +1283,15 @@
                 </article>
 
 
-
-                <!-- PRODUCT 13 -->
-
-                <article class="product-card" data-category="Wall Décor">
-
-                    <div class="product-image-wrap">
-
-                        <img src="images/Img13.png" alt="Buddha Wall Hanging" loading="lazy">
-
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <span class="tag">
-                            Wall Décor
-                        </span>
-
-                        <h3>
-                            Buddha Wall Hanging
-                        </h3>
-
-                        <p>
-                            Peaceful handmade Buddha décor
-                            designed to bring a calm feel to your space.
-                        </p>
-
-                        <a class="order-link" href="#contact" data-product="Buddha Wall Hanging">
-
-                            Custom Order →
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- PRODUCT 14 -->
+                <!-- 13 -->
 
                 <article class="product-card" data-category="Spiritual Art">
 
                     <div class="product-image-wrap">
 
-                        <img src="images/Img14.png" alt="Decorative Lotus Diya" loading="lazy">
+                        <img src="images/Img13.png" alt="Traditional Spiritual Art" loading="lazy">
 
                     </div>
-
 
                     <div class="product-info">
 
@@ -1304,29 +1300,59 @@
                         </span>
 
                         <h3>
-                            Decorative Lotus Diya
+                            Traditional Spiritual Art
                         </h3>
 
                         <p>
-                            Beautiful handcrafted lotus diya décor
-                            with a traditional festive touch.
+                            Handcrafted traditional-inspired
+                            decorative spiritual artwork.
                         </p>
 
-                        <a class="order-link" href="#contact" data-product="Decorative Lotus Diya">
-
+                        <a class="order-link" href="#contact" data-product="Traditional Spiritual Art">
                             Custom Order →
-
                         </a>
 
                     </div>
 
                 </article>
 
+
+                <!-- 14 -->
+
+                <article class="product-card" data-category="Spiritual Art">
+
+                    <div class="product-image-wrap">
+
+                        <img src="images/Img14.png" alt="Shivling Art" loading="lazy">
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="tag">
+                            Spiritual Art
+                        </span>
+
+                        <h3>
+                            Shivling Art
+                        </h3>
+
+                        <p>
+                            Devotional handcrafted Shivling décor
+                            with a beautiful traditional design.
+                        </p>
+
+                        <a class="order-link" href="#contact" data-product="Shivling Art">
+                            Custom Order →
+                        </a>
+
+                    </div>
+
+                </article>
 
             </div>
 
         </section>
-
 
 
         <!-- =========================
@@ -1339,26 +1365,21 @@
 
                 <div>
 
-                    <div class="kicker" style="color:#d5a25c">
-
-                        About us
-
+                    <div class="kicker" style="color:#d5a25c;">
+                        About Us
                     </div>
-
 
                     <h2>
                         Little details.<br>
                         Big feelings.
                     </h2>
 
-
                     <p>
-                        DS Creations is all about turning
-                        simple materials into meaningful pieces.
-                        Whether you're decorating your home,
-                        celebrating a festival or gifting someone
-                        special, our handmade creations are made
-                        to feel personal.
+                        DS Creations is all about turning simple
+                        materials into meaningful pieces. Whether
+                        you're decorating your home, celebrating a
+                        festival or gifting someone special, our
+                        handmade creations are made to feel personal.
                     </p>
 
                 </div>
@@ -1373,8 +1394,8 @@
                         </strong>
 
                         <span>
-                            Each piece is crafted with care
-                            rather than mass-produced.
+                            Each piece is crafted with care rather
+                            than mass-produced.
                         </span>
 
                     </div>
@@ -1387,8 +1408,8 @@
                         </strong>
 
                         <span>
-                            Colours, designs and gift ideas
-                            can be discussed for custom orders.
+                            Colours, designs and gift ideas can be
+                            discussed for custom orders.
                         </span>
 
                     </div>
@@ -1401,8 +1422,8 @@
                         </strong>
 
                         <span>
-                            Thoughtful handmade pieces for
-                            birthdays, festivals and special moments.
+                            Thoughtful handmade pieces for birthdays,
+                            festivals and special moments.
                         </span>
 
                     </div>
@@ -1414,7 +1435,6 @@
         </section>
 
 
-
         <!-- =========================
              CONTACT
         ========================= -->
@@ -1424,14 +1444,12 @@
             <div class="contact-box">
 
                 <div class="kicker">
-                    Let's create something
+                    Let's Create Something
                 </div>
-
 
                 <h2>
                     Have an idea in mind?
                 </h2>
-
 
                 <p>
                     Tell us what you want to customise.
@@ -1440,28 +1458,19 @@
                 </p>
 
 
-                <div class="btns" style="justify-content:center">
-
+                <div class="btns" style="justify-content:center;">
 
                     <a class="btn primary" href="https://wa.me/919699608447" target="_blank" rel="noopener">
-
                         WhatsApp · 9699608447
-
                     </a>
-
 
                     <a class="btn primary" href="https://wa.me/917769872020" target="_blank" rel="noopener">
-
                         WhatsApp · 7769872020
-
                     </a>
-
 
                     <a class="btn secondary" href="https://www.instagram.com/_ds_creation_20/" target="_blank"
                         rel="noopener">
-
-                        Instagram · @_ds_creations
-
+                        Instagram · @_ds_creation_20
                     </a>
 
                 </div>
@@ -1473,17 +1482,13 @@
     </main>
 
 
-
     <!-- =========================
          FOOTER
     ========================= -->
 
     <footer>
-
         © 2026 DS Creations · Handmade with love
-
     </footer>
-
 
 
     <!-- =========================
@@ -1492,42 +1497,43 @@
 
     <script>
 
-        /* FILTER SYSTEM */
+        /* =========================
+           PRODUCT FILTER
+        ========================= */
 
         const filters =
-            document.querySelectorAll('.filter');
+            document.querySelectorAll(".filter");
 
         const cards =
-            document.querySelectorAll('.product-card');
+            document.querySelectorAll(".product-card");
 
 
-        filters.forEach(btn => {
+        filters.forEach(button => {
 
-            btn.addEventListener('click', () => {
+            button.addEventListener("click", () => {
 
-                filters.forEach(b =>
-                    b.classList.remove('active')
-                );
+                filters.forEach(filter => {
+                    filter.classList.remove("active");
+                });
 
-                btn.classList.add('active');
+                button.classList.add("active");
 
-
-                const filter =
-                    btn.dataset.filter;
+                const selectedCategory =
+                    button.dataset.filter;
 
 
                 cards.forEach(card => {
 
                     if (
-                        filter === 'All' ||
-                        card.dataset.category === filter
+                        selectedCategory === "All" ||
+                        card.dataset.category === selectedCategory
                     ) {
 
-                        card.style.display = '';
+                        card.style.display = "";
 
                     } else {
 
-                        card.style.display = 'none';
+                        card.style.display = "none";
 
                     }
 
@@ -1538,39 +1544,32 @@
         });
 
 
-
-        /* PRODUCT → WHATSAPP */
+        /* =========================
+           PRODUCT → WHATSAPP
+        ========================= */
 
         document
-            .querySelectorAll('.order-link')
+            .querySelectorAll(".order-link")
             .forEach(link => {
 
-                link.addEventListener('click', e => {
+                link.addEventListener("click", event => {
 
-                    e.preventDefault();
-
+                    event.preventDefault();
 
                     const product =
                         link.dataset.product;
 
-
                     const message =
                         encodeURIComponent(
-
                             "Hi DS Creations! I am interested in: "
-                            + product +
-                            ". I would like to know the price and customization options."
-
+                            + product
+                            + ". I would like to know the price and customization options."
                         );
 
-
                     window.open(
-
                         "https://wa.me/919699608447?text="
                         + message,
-
                         "_blank"
-
                     );
 
                 });
