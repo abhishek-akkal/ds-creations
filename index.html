@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>DS Creations | Handmade with Love</title>
@@ -10,726 +12,53 @@
     <meta name="description"
         content="DS Creations — handmade crochet, traditional décor, spiritual art and personalised gifts.">
 
+    <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
         rel="stylesheet">
 
+    <!-- Favicon -->
+
     <link rel="icon" type="image/png" href="images/Logo.png">
 
-    <style>
-        :root {
-            --ink: #241b17;
-            --muted: #756862;
-            --cream: #fbf7f1;
-            --paper: #fffdf9;
-            --accent: #9b5b3d;
-            --line: #eadfd5;
-            --white: #ffffff;
-        }
+    <!-- CSS -->
 
-        * {
-            box-sizing: border-box;
-        }
+    <link rel="stylesheet" href="index.css">
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            background: var(--cream);
-            color: var(--ink);
-            font-family: "DM Sans", sans-serif;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* =========================
-           NAVBAR
-        ========================= */
-
-        .nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-
-            background: rgba(255, 253, 249, 0.97);
-            backdrop-filter: blur(12px);
-
-            border-bottom: 1px solid var(--line);
-        }
-
-        .nav-inner {
-            width: calc(100% - 64px);
-            max-width: 1325px;
-
-            min-height: 76px;
-
-            margin: 0 auto;
-            padding: 10px 0;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 50px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-
-            gap: 16px;
-
-            flex-shrink: 0;
-        }
-
-        .brand-mark {
-            width: 52px;
-            height: 52px;
-
-            object-fit: contain;
-
-            display: block;
-        }
-
-        .brand span {
-            font-family: "Playfair Display", serif;
-
-            font-size: 25px;
-            font-weight: 600;
-
-            line-height: 1;
-
-            white-space: nowrap;
-        }
-
-        .navlinks {
-            display: flex;
-            align-items: center;
-
-            gap: 38px;
-
-            margin-right: 25px;
-
-            font-size: 17px;
-
-            color: var(--muted);
-        }
-
-        .navlinks a {
-            padding: 8px 0;
-
-            white-space: nowrap;
-
-            transition: color 0.2s ease;
-        }
-
-        .navlinks a:hover {
-            color: var(--accent);
-        }
-
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            width: calc(100% - 64px);
-            max-width: 1325px;
-
-            margin: 0 auto;
-
-            padding: 82px 0 72px;
-
-            display: grid;
-
-            grid-template-columns: 1.05fr 0.95fr;
-
-            gap: 65px;
-
-            align-items: center;
-        }
-
-        .kicker {
-            color: var(--accent);
-
-            font-weight: 700;
-
-            letter-spacing: 0.14em;
-
-            text-transform: uppercase;
-
-            font-size: 12px;
-        }
-
-        h1 {
-            font: 600 clamp(48px, 5.5vw, 78px) / 0.98 "Playfair Display", serif;
-
-            margin: 14px 0 20px;
-
-            letter-spacing: -0.04em;
-        }
-
-        .hero p {
-            font-size: 17px;
-
-            line-height: 1.75;
-
-            color: var(--muted);
-
-            max-width: 590px;
-
-            margin: 0;
-        }
-
-        .btns {
-            display: flex;
-
-            gap: 14px;
-
-            flex-wrap: wrap;
-
-            margin-top: 28px;
-        }
-
-        .btn {
-            padding: 14px 21px;
-
-            border-radius: 999px;
-
-            font-weight: 700;
-
-            font-size: 14px;
-
-            border: 1px solid var(--ink);
-
-            transition: 0.2s ease;
-        }
-
-        .btn.primary {
-            background: var(--ink);
-
-            color: white;
-        }
-
-        .btn.secondary {
-            background: transparent;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .hero-logo {
-            background: var(--white);
-
-            border: 1px solid var(--line);
-
-            border-radius: 36px;
-
-            padding: 32px;
-
-            box-shadow:
-                0 20px 70px rgba(60, 35, 20, 0.09);
-
-            text-align: center;
-        }
-
-        .hero-mark {
-            width: 100%;
-
-            max-width: 470px;
-
-            max-height: 470px;
-
-            object-fit: contain;
-
-            display: block;
-
-            margin: auto;
-
-            border-radius: 24px;
-        }
-
-
-        /* =========================
-           COLLECTION SECTION
-        ========================= */
-
-        .section {
-            width: calc(100% - 64px);
-
-            max-width: 1325px;
-
-            margin: 0 auto;
-
-            padding: 72px 0;
-        }
-
-        .section-head {
-            display: flex;
-
-            align-items: end;
-
-            justify-content: space-between;
-
-            gap: 60px;
-
-            margin-bottom: 30px;
-        }
-
-        .section h2 {
-            font: 600 clamp(38px, 4.5vw, 58px) "Playfair Display", serif;
-
-            margin: 0;
-
-            letter-spacing: -0.025em;
-        }
-
-        .section-head p {
-            color: var(--muted);
-
-            max-width: 590px;
-
-            line-height: 1.65;
-
-            margin: 0;
-        }
-
-
-        /* =========================
-           FILTERS
-        ========================= */
-
-        .filters {
-            display: flex;
-
-            gap: 10px;
-
-            flex-wrap: wrap;
-
-            margin-bottom: 32px;
-        }
-
-        .filter {
-            border: 1px solid var(--line);
-
-            background: var(--paper);
-
-            padding: 11px 18px;
-
-            border-radius: 999px;
-
-            cursor: pointer;
-
-            font: 600 14px "DM Sans", sans-serif;
-
-            transition: 0.2s ease;
-        }
-
-        .filter.active,
-        .filter:hover {
-            background: var(--ink);
-
-            color: white;
-
-            border-color: var(--ink);
-        }
-
-
-        /* =========================
-           PRODUCT GRID
-        ========================= */
-
-        .grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, minmax(0, 1fr));
-
-            gap: 24px;
-        }
-
-
-        /* =========================
-           PRODUCT CARD
-        ========================= */
-
-        .product-card {
-            background: var(--paper);
-
-            border: 1px solid var(--line);
-
-            border-radius: 22px;
-
-            overflow: hidden;
-
-            transition:
-                transform 0.25s ease,
-                box-shadow 0.25s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-
-            box-shadow:
-                0 18px 45px rgba(60, 35, 20, 0.10);
-        }
-
-        .product-image-wrap {
-            width: 100%;
-
-            aspect-ratio: 1 / 1;
-
-            background: #f2ece5;
-
-            overflow: hidden;
-        }
-
-        .product-image-wrap img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-
-            display: block;
-
-            transition: transform 0.35s ease;
-        }
-
-        .product-card:hover .product-image-wrap img {
-            transform: scale(1.035);
-        }
-
-
-        /* =========================
-           PRODUCT INFO
-        ========================= */
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .tag {
-            font-size: 10px;
-
-            text-transform: uppercase;
-
-            letter-spacing: 0.1em;
-
-            color: var(--accent);
-
-            font-weight: 700;
-        }
-
-        .product-info h3 {
-            font: 600 21px "Playfair Display", serif;
-
-            margin: 9px 0 8px;
-
-            line-height: 1.2;
-        }
-
-        .product-info p {
-            font-size: 14px;
-
-            color: var(--muted);
-
-            line-height: 1.55;
-
-            min-height: 44px;
-
-            margin: 0;
-        }
-
-        .order-link {
-            display: inline-flex;
-
-            margin-top: 17px;
-
-            font-size: 14px;
-
-            font-weight: 700;
-
-            gap: 7px;
-
-            color: var(--accent);
-
-            transition: color 0.2s ease;
-        }
-
-        .order-link:hover {
-            color: var(--ink);
-        }
-
-
-        /* =========================
-           ABOUT
-        ========================= */
-
-        .about {
-            background: var(--ink);
-
-            color: white;
-
-            margin-top: 10px;
-        }
-
-        .about-inner {
-            width: calc(100% - 64px);
-
-            max-width: 1325px;
-
-            margin: 0 auto;
-
-            padding: 78px 0;
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 70px;
-        }
-
-        .about h2 {
-            font: 600 52px "Playfair Display", serif;
-
-            margin: 0 0 18px;
-        }
-
-        .about p {
-            color: #d8ccc5;
-
-            line-height: 1.8;
-
-            margin: 0;
-
-            max-width: 620px;
-        }
-
-        .points {
-            display: grid;
-
-            gap: 16px;
-        }
-
-        .point {
-            border: 1px solid #4b3b34;
-
-            border-radius: 18px;
-
-            padding: 21px;
-        }
-
-        .point strong {
-            display: block;
-
-            margin-bottom: 6px;
-        }
-
-
-        /* =========================
-           CONTACT
-        ========================= */
-
-        .contact {
-            background: #f0e6dc;
-        }
-
-        .contact-box {
-            max-width: 900px;
-
-            margin: auto;
-
-            text-align: center;
-
-            background: var(--paper);
-
-            border: 1px solid var(--line);
-
-            border-radius: 30px;
-
-            padding: 55px 30px;
-        }
-
-        .contact-box h2 {
-            font: 600 48px "Playfair Display", serif;
-
-            margin: 0 0 14px;
-        }
-
-        .contact-box p {
-            color: var(--muted);
-
-            line-height: 1.7;
-
-            margin: 0 auto;
-
-            max-width: 740px;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            padding: 28px 20px;
-
-            text-align: center;
-
-            color: var(--muted);
-
-            font-size: 13px;
-
-            border-top: 1px solid var(--line);
-        }
-
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media (max-width: 1400px) {
-
-            .nav-inner,
-            .hero,
-            .section,
-            .about-inner {
-                width: calc(100% - 64px);
-            }
-        }
-
-
-        @media (max-width: 1000px) {
-
-            .hero,
-            .about-inner {
-                grid-template-columns: 1fr;
-            }
-
-            .grid {
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-
-                gap: 20px;
-            }
-
-            .section-head {
-                align-items: flex-start;
-
-                flex-direction: column;
-
-                gap: 20px;
-            }
-
-            .navlinks {
-                gap: 25px;
-
-                margin-right: 0;
-            }
-        }
-
-
-        @media (max-width: 650px) {
-
-            .nav-inner {
-                width: calc(100% - 32px);
-
-                min-height: 70px;
-            }
-
-            .navlinks {
-                display: none;
-            }
-
-            .brand-mark {
-                width: 46px;
-                height: 46px;
-            }
-
-            .brand span {
-                font-size: 22px;
-            }
-
-            .hero,
-            .section,
-            .about-inner {
-                width: calc(100% - 32px);
-            }
-
-            .hero {
-                padding: 50px 0 60px;
-            }
-
-            .hero-logo {
-                padding: 20px;
-            }
-
-            .grid {
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-
-                gap: 12px;
-            }
-
-            .product-info {
-                padding: 14px;
-            }
-
-            .product-info h3 {
-                font-size: 17px;
-            }
-
-            .product-info p {
-                font-size: 12px;
-            }
-
-            .about-inner {
-                padding: 60px 0;
-            }
-
-            .about h2 {
-                font-size: 40px;
-            }
-
-            .contact-box {
-                padding: 42px 18px;
-            }
-
-            .contact-box h2 {
-                font-size: 38px;
-            }
-        }
-    </style>
 </head>
 
 
 <body>
 
+
     <!-- =========================
          NAVBAR
-    ========================= -->
+    ========================== -->
 
     <nav class="nav">
 
         <div class="nav-inner">
 
-            <a class="brand" href="#home">
 
-                <img class="brand-mark" src="images/Logo.png" alt="DS Creations logo">
+            <!-- LEFT: LOGO + BRAND -->
 
-                <span>DS Creations</span>
+            <a href="#home" class="brand">
+
+                <img src="images/Logo.png" alt="DS Creations Logo" class="brand-mark">
+
+                <span>
+                    DS Creations
+                </span>
 
             </a>
 
+
+            <!-- CENTER: NAVIGATION -->
 
             <div class="navlinks">
 
@@ -751,18 +80,57 @@
 
             </div>
 
+
+            <!-- RIGHT: CART + LOGIN -->
+
+            <div class="nav-actions">
+
+                <button class="navbar-cart" id="navbarCart" type="button">
+
+                    <span class="nav-icon">
+                        🛒
+                    </span>
+
+                    <span>
+                        Cart
+                    </span>
+
+                    <span id="cartCount" class="cart-count">
+                        0
+                    </span>
+
+                </button>
+
+
+                <button class="login-btn" id="loginBtn" type="button">
+
+                    <span class="nav-icon">
+                        👤
+                    </span>
+
+                    <span id="loginText">
+                        Login
+                    </span>
+
+                </button>
+
+            </div>
+
         </div>
 
     </nav>
 
 
+
     <!-- =========================
          HOME
-    ========================= -->
+    ========================== -->
 
     <main id="home">
 
+
         <section class="hero">
+
 
             <div>
 
@@ -770,16 +138,23 @@
                     Handmade • Custom • Heartfelt
                 </div>
 
+
                 <h1>
+
                     Made by hand,<br>
+
                     made with love.
+
                 </h1>
 
+
                 <p>
+
                     Welcome to <b>DS Creations</b> — a little world
                     of handmade crochet, traditional art, décor and
                     thoughtful gifts. Every creation is crafted with
                     patience, creativity and a personal touch.
+
                 </p>
 
 
@@ -788,6 +163,7 @@
                     <a class="btn primary" href="#collections">
                         Explore Creations
                     </a>
+
 
                     <a class="btn secondary" href="#contact">
                         Customise Yours
@@ -804,22 +180,27 @@
 
             </div>
 
+
         </section>
+
 
 
         <!-- =========================
              COLLECTIONS
-        ========================= -->
+        ========================== -->
 
         <section class="section" id="collections">
 
+
             <div class="section-head">
+
 
                 <div>
 
                     <div class="kicker">
                         Our Work
                     </div>
+
 
                     <h2>
                         Handmade Collections
@@ -829,12 +210,15 @@
 
 
                 <p>
+
                     From delicate crochet pieces to traditional
                     décor and spiritual art — explore handmade
                     creations that can also be customised for you.
+
                 </p>
 
             </div>
+
 
 
             <!-- FILTER BUTTONS -->
@@ -845,21 +229,26 @@
                     All
                 </button>
 
+
                 <button class="filter" data-filter="Crochet Creations">
                     Crochet
                 </button>
+
 
                 <button class="filter" data-filter="Handcrafted Décor">
                     Décor
                 </button>
 
+
                 <button class="filter" data-filter="Spiritual Art">
                     Spiritual Art
                 </button>
 
+
                 <button class="filter" data-filter="Gift Creations">
                     Gifts
                 </button>
+
 
                 <button class="filter" data-filter="Wall Décor">
                     Wall Décor
@@ -868,486 +257,371 @@
             </div>
 
 
+
             <!-- =========================
-                 PRODUCTS
-            ========================= -->
+        PRODUCTS
+   ========================== -->
 
             <div class="grid">
 
-
                 <!-- 1 -->
-
                 <article class="product-card" data-category="Spiritual Art">
-
                     <div class="product-image-wrap">
-
                         <img src="images/Img1.png" alt="Ganesh Decorative Wall Art" loading="lazy">
-
                     </div>
-
                     <div class="product-info">
-
-                        <span class="tag">
-                            Spiritual Art
-                        </span>
-
-                        <h3>
-                            Ganesh Decorative Wall Art
-                        </h3>
-
-                        <p>
-                            Beautiful handcrafted Ganesh artwork
-                            with intricate decorative detailing.
-                        </p>
-
+                        <span class="tag">Spiritual Art</span>
+                        <h3>Ganesh Decorative Wall Art</h3>
+                        <p>Beautiful handcrafted Ganesh artwork with intricate decorative detailing.</p>
                         <a class="order-link" href="#contact" data-product="Ganesh Decorative Wall Art">
                             Custom Order →
                         </a>
-
                     </div>
-
                 </article>
 
-
                 <!-- 2 -->
-
                 <article class="product-card" data-category="Gift Creations">
-
                     <div class="product-image-wrap">
-
                         <img src="images/Img2.png" alt="Handmade Rose Bouquet" loading="lazy">
-
                     </div>
-
                     <div class="product-info">
-
-                        <span class="tag">
-                            Gift Creations
-                        </span>
-
-                        <h3>
-                            Handmade Rose Bouquet
-                        </h3>
-
-                        <p>
-                            A beautiful handmade rose bouquet,
-                            perfect for gifting and special moments.
-                        </p>
-
+                        <span class="tag">Gift Creations</span>
+                        <h3>Handmade Rose Bouquet</h3>
+                        <p>A beautiful handmade rose bouquet, perfect for gifting and special moments.</p>
                         <a class="order-link" href="#contact" data-product="Handmade Rose Bouquet">
                             Custom Order →
                         </a>
-
                     </div>
-
                 </article>
 
-
                 <!-- 3 -->
-
                 <article class="product-card" data-category="Spiritual Art">
-
                     <div class="product-image-wrap">
-
                         <img src="images/Img3.png" alt="Shri Radha Decorative Art" loading="lazy">
-
                     </div>
-
                     <div class="product-info">
-
-                        <span class="tag">
-                            Spiritual Art
-                        </span>
-
-                        <h3>
-                            Shri Radha Decorative Art
-                        </h3>
-
-                        <p>
-                            Handcrafted devotional décor featuring
-                            an elegant Shri Radha design.
-                        </p>
-
+                        <span class="tag">Spiritual Art</span>
+                        <h3>Shri Radha Decorative Art</h3>
+                        <p>Handcrafted devotional décor featuring an elegant Shri Radha design.</p>
                         <a class="order-link" href="#contact" data-product="Shri Radha Decorative Art">
                             Custom Order →
                         </a>
-
                     </div>
-
                 </article>
-
 
                 <!-- 4 -->
-
                 <article class="product-card" data-category="Spiritual Art">
-
                     <div class="product-image-wrap">
-
-                        <img src="images/Img4.png" alt="Hanuman Wall Art" loading="lazy">
-
+                        <img src="images/Img4.png" alt="Shiv & Parvati Decorative Wall Art" loading="lazy">
                     </div>
-
                     <div class="product-info">
-
-                        <span class="tag">
-                            Spiritual Art
-                        </span>
-
-                        <h3>
-                            Hanuman Wall Art
-                        </h3>
-
-                        <p>
-                            Detailed handcrafted Hanuman artwork
-                            created for devotional home décor.
-                        </p>
-
-                        <a class="order-link" href="#contact" data-product="Hanuman Wall Art">
+                        <span class="tag">Spiritual Art</span>
+                        <h3>Shiv & Parvati Decorative Wall Art</h3>
+                        <p>Beautiful handcrafted Shiv and Parvati artwork for devotional home décor.</p>
+                        <a class="order-link" href="#contact" data-product="Shiv & Parvati Decorative Wall Art">
                             Custom Order →
                         </a>
-
                     </div>
-
                 </article>
 
-
                 <!-- 5 -->
-
                 <article class="product-card" data-category="Handcrafted Décor">
-
                     <div class="product-image-wrap">
-
                         <img src="images/Img5.png" alt="Kolam Wooden Chowki" loading="lazy">
-
                     </div>
-
                     <div class="product-info">
-
-                        <span class="tag">
-                            Handcrafted Décor
-                        </span>
-
-                        <h3>
-                            Kolam Wooden Chowki
-                        </h3>
-
-                        <p>
-                            Traditional wooden chowki featuring
-                            beautiful handcrafted kolam artwork.
-                        </p>
-
+                        <span class="tag">Handcrafted Décor</span>
+                        <h3>Kolam Wooden Chowki</h3>
+                        <p>Traditional wooden chowki featuring beautiful handcrafted kolam artwork.</p>
                         <a class="order-link" href="#contact" data-product="Kolam Wooden Chowki">
                             Custom Order →
                         </a>
-
                     </div>
-
                 </article>
 
-
                 <!-- 6 -->
-
                 <article class="product-card" data-category="Handcrafted Décor">
-
                     <div class="product-image-wrap">
-
                         <img src="images/Img6.png" alt="Kolam Coaster Set" loading="lazy">
-
                     </div>
-
                     <div class="product-info">
-
-                        <span class="tag">
-                            Handcrafted Décor
-                        </span>
-
-                        <h3>
-                            Kolam Coaster Set
-                        </h3>
-
-                        <p>
-                            Traditional-inspired handcrafted
-                            coasters with beautiful kolam patterns.
-                        </p>
-
+                        <span class="tag">Handcrafted Décor</span>
+                        <h3>Kolam Coaster Set</h3>
+                        <p>Traditional-inspired handcrafted coasters with beautiful kolam patterns.</p>
                         <a class="order-link" href="#contact" data-product="Kolam Coaster Set">
                             Custom Order →
                         </a>
-
                     </div>
-
                 </article>
 
-
                 <!-- 7 -->
-
                 <article class="product-card" data-category="Spiritual Art">
-
                     <div class="product-image-wrap">
-
                         <img src="images/Img7.png" alt="Hanuman Decorative Artwork" loading="lazy">
-
                     </div>
-
                     <div class="product-info">
-
-                        <span class="tag">
-                            Spiritual Art
-                        </span>
-
-                        <h3>
-                            Hanuman Decorative Artwork
-                        </h3>
-
-                        <p>
-                            Detailed handcrafted devotional artwork
-                            with an intricate traditional design.
-                        </p>
-
+                        <span class="tag">Spiritual Art</span>
+                        <h3>Hanuman Decorative Artwork</h3>
+                        <p>Detailed handcrafted devotional artwork with an intricate traditional design.</p>
                         <a class="order-link" href="#contact" data-product="Hanuman Decorative Artwork">
                             Custom Order →
                         </a>
-
                     </div>
-
                 </article>
 
-
                 <!-- 8 -->
-
                 <article class="product-card" data-category="Gift Creations">
-
                     <div class="product-image-wrap">
-
                         <img src="images/Img8.png" alt="Personalised Name Decoration" loading="lazy">
-
                     </div>
-
                     <div class="product-info">
-
-                        <span class="tag">
-                            Gift Creations
-                        </span>
-
-                        <h3>
-                            Personalised Name Decoration
-                        </h3>
-
-                        <p>
-                            Custom handmade décor designed with
-                            your chosen name and colours.
-                        </p>
-
+                        <span class="tag">Gift Creations</span>
+                        <h3>Personalised Name Decoration</h3>
+                        <p>Custom handmade décor designed with your chosen name and colours.</p>
                         <a class="order-link" href="#contact" data-product="Personalised Name Decoration">
                             Custom Order →
                         </a>
-
                     </div>
-
                 </article>
 
-
                 <!-- 9 -->
-
                 <article class="product-card" data-category="Crochet Creations">
-
                     <div class="product-image-wrap">
-
                         <img src="images/Img9.png" alt="Crochet Flower Pins" loading="lazy">
-
                     </div>
-
                     <div class="product-info">
-
-                        <span class="tag">
-                            Crochet Creations
-                        </span>
-
-                        <h3>
-                            Crochet Flower Pins
-                        </h3>
-
-                        <p>
-                            Colourful handmade crochet flower pins
-                            with delicate floral details.
-                        </p>
-
+                        <span class="tag">Crochet Creations</span>
+                        <h3>Crochet Flower Pins</h3>
+                        <p>Colourful handmade crochet flower pins with delicate floral details.</p>
                         <a class="order-link" href="#contact" data-product="Crochet Flower Pins">
                             Custom Order →
                         </a>
-
                     </div>
-
                 </article>
 
-
                 <!-- 10 -->
-
                 <article class="product-card" data-category="Crochet Creations">
-
                     <div class="product-image-wrap">
-
                         <img src="images/Img10.png" alt="Crochet Flower Hair Clips" loading="lazy">
-
                     </div>
-
                     <div class="product-info">
-
-                        <span class="tag">
-                            Crochet Creations
-                        </span>
-
-                        <h3>
-                            Crochet Flower Hair Clips
-                        </h3>
-
-                        <p>
-                            Cute handmade crochet flower clips
-                            finished with beautiful pearl details.
-                        </p>
-
+                        <span class="tag">Crochet Creations</span>
+                        <h3>Crochet Flower Hair Clips</h3>
+                        <p>Cute handmade crochet flower clips finished with beautiful pearl details.</p>
                         <a class="order-link" href="#contact" data-product="Crochet Flower Hair Clips">
                             Custom Order →
                         </a>
-
                     </div>
-
                 </article>
-
 
                 <!-- 11 -->
-
                 <article class="product-card" data-category="Wall Décor">
-
                     <div class="product-image-wrap">
-
-                        <img src="images/Img11.png" alt="Floral Hanging" loading="lazy">
-
+                        <img src="images/Img11.png" alt="Handmade Floral Haar" loading="lazy">
                     </div>
-
                     <div class="product-info">
-
-                        <span class="tag">
-                            Wall Décor
-                        </span>
-
-                        <h3>
-                            Floral Hanging
-                        </h3>
-
-                        <p>
-                            Bright handmade floral hanging décor
-                            for a cheerful decorative touch.
-                        </p>
-
-                        <a class="order-link" href="#contact" data-product="Floral Hanging">
+                        <span class="tag">Wall Décor</span>
+                        <h3>Handmade Floral Haar</h3>
+                        <p>Beautiful handmade floral haar designed for traditional and festive décor.</p>
+                        <a class="order-link" href="#contact" data-product="Handmade Floral Haar">
                             Custom Order →
                         </a>
-
                     </div>
-
                 </article>
-
 
                 <!-- 12 -->
-
                 <article class="product-card" data-category="Spiritual Art">
-
                     <div class="product-image-wrap">
-
-                        <img src="images/Img12.png" alt="Shubh Labh Art" loading="lazy">
-
+                        <img src="images/Img12.png" alt="Shivling Lotus Decorative Wall Art" loading="lazy">
                     </div>
-
                     <div class="product-info">
-
-                        <span class="tag">
-                            Spiritual Art
-                        </span>
-
-                        <h3>
-                            Shubh Labh Art
-                        </h3>
-
-                        <p>
-                            Festive handcrafted Shubh Labh
-                            decorative artwork.
-                        </p>
-
-                        <a class="order-link" href="#contact" data-product="Shubh Labh Art">
+                        <span class="tag">Spiritual Art</span>
+                        <h3>Shivling Lotus Decorative Wall Art</h3>
+                        <p>Handcrafted spiritual wall décor featuring a Shivling and lotus design.</p>
+                        <a class="order-link" href="#contact" data-product="Shivling Lotus Decorative Wall Art">
                             Custom Order →
                         </a>
-
                     </div>
-
                 </article>
 
-
                 <!-- 13 -->
-
                 <article class="product-card" data-category="Spiritual Art">
-
                     <div class="product-image-wrap">
-
                         <img src="images/Img13.png" alt="Traditional Spiritual Art" loading="lazy">
-
                     </div>
-
                     <div class="product-info">
-
-                        <span class="tag">
-                            Spiritual Art
-                        </span>
-
-                        <h3>
-                            Traditional Spiritual Art
-                        </h3>
-
-                        <p>
-                            Handcrafted traditional-inspired
-                            decorative spiritual artwork.
-                        </p>
-
+                        <span class="tag">Spiritual Art</span>
+                        <h3>Traditional Spiritual Art</h3>
+                        <p>Handcrafted traditional-inspired decorative spiritual artwork.</p>
                         <a class="order-link" href="#contact" data-product="Traditional Spiritual Art">
                             Custom Order →
                         </a>
-
                     </div>
-
                 </article>
 
-
                 <!-- 14 -->
-
                 <article class="product-card" data-category="Spiritual Art">
-
                     <div class="product-image-wrap">
-
-                        <img src="images/Img14.png" alt="Shivling Art" loading="lazy">
-
+                        <img src="images/Img14.png" alt="Modak Incense Holder" loading="lazy">
                     </div>
-
                     <div class="product-info">
-
-                        <span class="tag">
-                            Spiritual Art
-                        </span>
-
-                        <h3>
-                            Shivling Art
-                        </h3>
-
-                        <p>
-                            Devotional handcrafted Shivling décor
-                            with a beautiful traditional design.
-                        </p>
-
-                        <a class="order-link" href="#contact" data-product="Shivling Art">
+                        <span class="tag">Spiritual Art</span>
+                        <h3>Modak Incense Holder</h3>
+                        <p>Handcrafted modak-shaped incense holder with a traditional decorative touch.</p>
+                        <a class="order-link" href="#contact" data-product="Modak Incense Holder">
                             Custom Order →
                         </a>
-
                     </div>
+                </article>
 
+                <!-- 15 -->
+                <article class="product-card" data-category="Handcrafted Décor">
+                    <div class="product-image-wrap">
+                        <img src="images/Imge15.png" alt="Handmade Wall Diya Holders" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <span class="tag">Handcrafted Décor</span>
+                        <h3>Handmade Wall Diya Holders</h3>
+                        <p>Beautiful handmade wall diya holders for festive and home décor.</p>
+                        <a class="order-link" href="#contact" data-product="Handmade Wall Diya Holders">
+                            Custom Order →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- 16 -->
+                <article class="product-card" data-category="Handcrafted Décor">
+                    <div class="product-image-wrap">
+                        <img src="images/Img16.png" alt="Decorative Diya Set" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <span class="tag">Handcrafted Décor</span>
+                        <h3>Decorative Diya Set</h3>
+                        <p>Beautiful handmade diyas perfect for festive and traditional decoration.</p>
+                        <a class="order-link" href="#contact" data-product="Decorative Diya Set">
+                            Custom Order →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- 17 -->
+                <article class="product-card" data-category="Handcrafted Décor">
+                    <div class="product-image-wrap">
+                        <img src="images/Img17.png" alt="Handmade Decorative Bag" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <span class="tag">Handcrafted Décor</span>
+                        <h3>Handmade Decorative Bag</h3>
+                        <p>A beautiful handmade decorative bag crafted with care and creativity.</p>
+                        <a class="order-link" href="#contact" data-product="Handmade Decorative Bag">
+                            Custom Order →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- 18 -->
+                <article class="product-card" data-category="Handcrafted Décor">
+                    <div class="product-image-wrap">
+                        <img src="images/Img18.png" alt="Round Kolam Wall Art" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <span class="tag">Handcrafted Décor</span>
+                        <h3>Round Kolam Wall Art</h3>
+                        <p>Traditional round kolam-inspired artwork for beautiful wall decoration.</p>
+                        <a class="order-link" href="#contact" data-product="Round Kolam Wall Art">
+                            Custom Order →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- 19 -->
+                <article class="product-card" data-category="Gift Creations">
+                    <div class="product-image-wrap">
+                        <img src="images/Img19.png" alt="Shubh Labh Door Hanging" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <span class="tag">Gift Creations</span>
+                        <h3>Shubh Labh Door Hanging</h3>
+                        <p>Traditional handmade Shubh Labh door hanging for festive décor.</p>
+                        <a class="order-link" href="#contact" data-product="Shubh Labh Door Hanging">
+                            Custom Order →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- 20 -->
+                <article class="product-card" data-category="Gift Creations">
+                    <div class="product-image-wrap">
+                        <img src="images/Img20.png" alt="Traditional Decorative Wall Set" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <span class="tag">Gift Creations</span>
+                        <h3>Traditional Decorative Wall Set</h3>
+                        <p>A beautiful traditional handmade decorative wall set.</p>
+                        <a class="order-link" href="#contact" data-product="Traditional Decorative Wall Set">
+                            Custom Order →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- 21 -->
+                <article class="product-card" data-category="Crochet Creations">
+                    <div class="product-image-wrap">
+                        <img src="images/Img21.png" alt="Handcrafted Round Spiritual Wall Art" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <span class="tag">Crochet Creations</span>
+                        <h3>Handcrafted Round Spiritual Wall Art</h3>
+                        <p>A colourful handcrafted round spiritual wall decoration.</p>
+                        <a class="order-link" href="#contact" data-product="Handcrafted Round Spiritual Wall Art">
+                            Custom Order →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- 22 -->
+                <article class="product-card" data-category="Crochet Creations">
+                    <div class="product-image-wrap">
+                        <img src="images/Img22.png" alt="Traditional Ghungroo Dance Wall Art" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <span class="tag">Crochet Creations</span>
+                        <h3>Traditional Ghungroo Dance Wall Art</h3>
+                        <p>Traditional handcrafted dance-inspired decorative artwork.</p>
+                        <a class="order-link" href="#contact" data-product="Traditional Ghungroo Dance Wall Art">
+                            Custom Order →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- 23 -->
+                <article class="product-card" data-category="Wall Décor">
+                    <div class="product-image-wrap">
+                        <img src="images/Img23.png" alt="Crochet Flower Set (Set of 3)" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <span class="tag">Wall Décor</span>
+                        <h3>Crochet Flower Set (Set of 3)</h3>
+                        <p>A set of three beautiful handmade crochet flowers.</p>
+                        <a class="order-link" href="#contact" data-product="Crochet Flower Set (Set of 3)">
+                            Custom Order →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- 24 -->
+                <article class="product-card" data-category="Wall Décor">
+                    <div class="product-image-wrap">
+                        <img src="images/Img24.png" alt="Colourful Handmade Diya Set" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <span class="tag">Wall Décor</span>
+                        <h3>Colourful Handmade Diya Set</h3>
+                        <p>Colourful handmade diyas perfect for festive decoration.</p>
+                        <a class="order-link" href="#contact" data-product="Colourful Handmade Diya Set">
+                            Custom Order →
+                        </a>
+                    </div>
                 </article>
 
             </div>
@@ -1355,13 +629,15 @@
         </section>
 
 
+
         <!-- =========================
              ABOUT
-        ========================= -->
+        ========================== -->
 
         <section class="about" id="about">
 
             <div class="about-inner">
+
 
                 <div>
 
@@ -1369,23 +645,28 @@
                         About Us
                     </div>
 
+
                     <h2>
                         Little details.<br>
                         Big feelings.
                     </h2>
 
+
                     <p>
+
                         DS Creations is all about turning simple
                         materials into meaningful pieces. Whether
                         you're decorating your home, celebrating a
                         festival or gifting someone special, our
                         handmade creations are made to feel personal.
+
                     </p>
 
                 </div>
 
 
                 <div class="points">
+
 
                     <div class="point">
 
@@ -1428,6 +709,7 @@
 
                     </div>
 
+
                 </div>
 
             </div>
@@ -1435,148 +717,131 @@
         </section>
 
 
+
         <!-- =========================
              CONTACT
-        ========================= -->
+        ========================== -->
 
         <section class="section contact" id="contact">
 
             <div class="contact-box">
 
+
                 <div class="kicker">
                     Let's Create Something
                 </div>
+
 
                 <h2>
                     Have an idea in mind?
                 </h2>
 
+
                 <p>
+
                     Tell us what you want to customise.
                     For custom orders and enquiries,
                     contact us on WhatsApp or Instagram.
+
                 </p>
 
 
                 <div class="btns" style="justify-content:center;">
 
+
                     <a class="btn primary" href="https://wa.me/919699608447" target="_blank" rel="noopener">
                         WhatsApp · 9699608447
                     </a>
 
+
                     <a class="btn primary" href="https://wa.me/917769872020" target="_blank" rel="noopener">
                         WhatsApp · 7769872020
                     </a>
+
 
                     <a class="btn secondary" href="https://www.instagram.com/_ds_creation_20/" target="_blank"
                         rel="noopener">
                         Instagram · @_ds_creation_20
                     </a>
 
+
                 </div>
 
             </div>
 
         </section>
 
+
     </main>
+
+
+
+    <!-- =========================
+         LOGIN MODAL
+    ========================== -->
+
+    <div class="login-overlay" id="loginOverlay">
+
+        <div class="login-box">
+
+
+            <button class="login-close" id="loginClose" type="button">
+                ×
+            </button>
+
+
+            <div class="login-icon">
+                👋
+            </div>
+
+
+            <h2>
+                Welcome to DS Creations
+            </h2>
+
+
+            <p>
+                Enter your name to continue.
+            </p>
+
+
+            <input type="text" id="nameInput" placeholder="Enter your name" maxlength="40" autocomplete="name">
+
+
+            <button class="save-name-btn" id="saveNameBtn" type="button">
+                Continue
+            </button>
+
+
+            <button class="logout-btn" id="logoutBtn" type="button">
+                Logout
+            </button>
+
+
+        </div>
+
+    </div>
+
 
 
     <!-- =========================
          FOOTER
-    ========================= -->
+    ========================== -->
 
     <footer>
+
         © 2026 DS Creations · Handmade with love
+
     </footer>
+
 
 
     <!-- =========================
          JAVASCRIPT
-    ========================= -->
+    ========================== -->
 
-    <script>
+    <script src="app.js"></script>
 
-        /* =========================
-           PRODUCT FILTER
-        ========================= */
-
-        const filters =
-            document.querySelectorAll(".filter");
-
-        const cards =
-            document.querySelectorAll(".product-card");
-
-
-        filters.forEach(button => {
-
-            button.addEventListener("click", () => {
-
-                filters.forEach(filter => {
-                    filter.classList.remove("active");
-                });
-
-                button.classList.add("active");
-
-                const selectedCategory =
-                    button.dataset.filter;
-
-
-                cards.forEach(card => {
-
-                    if (
-                        selectedCategory === "All" ||
-                        card.dataset.category === selectedCategory
-                    ) {
-
-                        card.style.display = "";
-
-                    } else {
-
-                        card.style.display = "none";
-
-                    }
-
-                });
-
-            });
-
-        });
-
-
-        /* =========================
-           PRODUCT → WHATSAPP
-        ========================= */
-
-        document
-            .querySelectorAll(".order-link")
-            .forEach(link => {
-
-                link.addEventListener("click", event => {
-
-                    event.preventDefault();
-
-                    const product =
-                        link.dataset.product;
-
-                    const message =
-                        encodeURIComponent(
-                            "Hi DS Creations! I am interested in: "
-                            + product
-                            + ". I would like to know the price and customization options."
-                        );
-
-                    window.open(
-                        "https://wa.me/919699608447?text="
-                        + message,
-                        "_blank"
-                    );
-
-                });
-
-            });
-
-    </script>
 
 </body>
 

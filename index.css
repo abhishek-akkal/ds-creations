@@ -1,0 +1,1599 @@
+:root {
+  --ink: #241b17;
+  --muted: #756862;
+  --cream: #fbf7f1;
+  --paper: #fffdf9;
+  --accent: #9b5b3d;
+  --line: #eadfd5;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: rgba(255, 253, 249, 0.97);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-inner {
+  width: calc(100% - 64px);
+  max-width: 1325px;
+
+  min-height: 76px;
+
+  margin: 0 auto;
+  padding: 10px 0;
+
+  display: grid;
+
+  grid-template-columns: 1fr auto 1fr;
+
+  align-items: center;
+
+  gap: 30px;
+}
+
+/* =========================
+   BRAND
+========================= */
+
+.brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  justify-self: start;
+
+  flex-shrink: 0;
+}
+
+.brand-mark {
+  width: 52px;
+  height: 52px;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+.brand span {
+  font-family: "Playfair Display", serif;
+
+  font-size: 25px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+/* =========================
+   CENTER NAVIGATION
+========================= */
+
+.navlinks {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 38px;
+
+  font-size: 17px;
+
+  color: var(--muted);
+
+  white-space: nowrap;
+}
+
+.navlinks a {
+  padding: 8px 0;
+
+  white-space: nowrap;
+
+  transition: color 0.2s ease;
+}
+
+.navlinks a:hover {
+  color: var(--accent);
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.nav-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  justify-self: end;
+}
+
+/* =========================
+   CART BUTTON
+========================= */
+
+.navbar-cart {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 9px 13px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 999px;
+
+  background: var(--paper);
+
+  color: var(--ink);
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition: 0.2s ease;
+}
+
+.navbar-cart:hover {
+  background: var(--ink);
+
+  color: white;
+
+  border-color: var(--ink);
+}
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.login-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 9px 14px;
+
+  border: 1px solid var(--ink);
+
+  border-radius: 999px;
+
+  background: var(--ink);
+
+  color: white;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition: 0.2s ease;
+}
+
+.login-btn:hover {
+  background: var(--accent);
+
+  border-color: var(--accent);
+}
+
+.nav-icon {
+  font-size: 15px;
+
+  line-height: 1;
+}
+
+.cart-count {
+  min-width: 20px;
+
+  height: 20px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0 5px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  color: white;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+/* =========================
+   LOGIN MODAL
+========================= */
+
+.login-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 2000;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(36, 27, 23, 0.45);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.login-overlay.active {
+  opacity: 1;
+
+  visibility: visible;
+}
+
+/* =========================
+   LOGIN BOX
+========================= */
+
+.login-box {
+  position: relative;
+
+  width: min(420px, 100%);
+
+  padding: 38px 30px 30px;
+
+  background: var(--paper);
+
+  border: 1px solid var(--line);
+
+  border-radius: 26px;
+
+  box-shadow: 0 25px 70px rgba(36, 27, 23, 0.18);
+
+  text-align: center;
+
+  transform: translateY(12px) scale(0.98);
+
+  transition: 0.25s ease;
+}
+
+.login-overlay.active .login-box {
+  transform: translateY(0) scale(1);
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.login-close {
+  position: absolute;
+
+  top: 14px;
+
+  right: 14px;
+
+  width: 34px;
+
+  height: 34px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: var(--ink);
+
+  font-size: 20px;
+
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.login-close:hover {
+  background: var(--ink);
+
+  color: white;
+}
+
+/* =========================
+   LOGIN ICON
+========================= */
+
+.login-icon {
+  font-size: 34px;
+
+  margin-bottom: 10px;
+}
+
+/* =========================
+   LOGIN HEADING
+========================= */
+
+.login-box h2 {
+  margin: 0 0 8px;
+
+  font:
+    600 30px "Playfair Display",
+    serif;
+}
+
+.login-box p {
+  margin: 0 0 22px;
+
+  color: var(--muted);
+
+  line-height: 1.6;
+}
+
+/* =========================
+   NAME INPUT
+========================= */
+
+.login-box input {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 12px;
+
+  background: white;
+
+  color: var(--ink);
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 15px;
+
+  outline: none;
+}
+
+.login-box input:focus {
+  border-color: var(--accent);
+
+  box-shadow: 0 0 0 3px rgba(155, 91, 61, 0.1);
+}
+
+/* =========================
+   CONTINUE BUTTON
+========================= */
+
+.save-name-btn {
+  width: 100%;
+
+  margin-top: 12px;
+
+  padding: 13px 18px;
+
+  border: 1px solid var(--ink);
+
+  border-radius: 999px;
+
+  background: var(--ink);
+
+  color: white;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.save-name-btn:hover {
+  background: var(--accent);
+
+  border-color: var(--accent);
+}
+
+/* =========================
+   LOGOUT
+========================= */
+
+.logout-btn {
+  display: none;
+
+  width: 100%;
+
+  margin-top: 10px;
+
+  padding: 12px 18px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: var(--ink);
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #f4ece5;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  width: calc(100% - 64px);
+  max-width: 1325px;
+
+  margin: 0 auto;
+
+  padding: 82px 0 72px;
+
+  display: grid;
+
+  grid-template-columns: 1.05fr 0.95fr;
+
+  gap: 65px;
+
+  align-items: center;
+}
+
+.kicker {
+  color: var(--accent);
+
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  font-size: 12px;
+}
+
+h1 {
+  font:
+    600 clamp(48px, 5.5vw, 78px) / 0.98 "Playfair Display",
+    serif;
+
+  margin: 14px 0 20px;
+
+  letter-spacing: -0.04em;
+}
+
+.hero p {
+  font-size: 17px;
+
+  line-height: 1.75;
+
+  color: var(--muted);
+
+  max-width: 590px;
+
+  margin: 0;
+}
+
+.btns {
+  display: flex;
+
+  gap: 14px;
+
+  flex-wrap: wrap;
+
+  margin-top: 28px;
+}
+
+.btn {
+  padding: 14px 21px;
+
+  border-radius: 999px;
+
+  font-weight: 700;
+
+  font-size: 14px;
+
+  border: 1px solid var(--ink);
+
+  transition: 0.2s ease;
+}
+
+.btn.primary {
+  background: var(--ink);
+
+  color: white;
+}
+
+.btn.secondary {
+  background: transparent;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.hero-logo {
+  background: var(--white);
+
+  border: 1px solid var(--line);
+
+  border-radius: 36px;
+
+  padding: 32px;
+
+  box-shadow: 0 20px 70px rgba(60, 35, 20, 0.09);
+
+  text-align: center;
+}
+
+.hero-mark {
+  width: 100%;
+
+  max-width: 470px;
+
+  max-height: 470px;
+
+  object-fit: contain;
+
+  display: block;
+
+  margin: auto;
+
+  border-radius: 24px;
+}
+
+/* =========================
+   COLLECTION SECTION
+========================= */
+
+.section {
+  width: calc(100% - 64px);
+
+  max-width: 1325px;
+
+  margin: 0 auto;
+
+  padding: 72px 0;
+}
+
+.section-head {
+  display: flex;
+
+  align-items: end;
+
+  justify-content: space-between;
+
+  gap: 60px;
+
+  margin-bottom: 30px;
+}
+
+.section h2 {
+  font:
+    600 clamp(38px, 4.5vw, 58px) "Playfair Display",
+    serif;
+
+  margin: 0;
+
+  letter-spacing: -0.025em;
+}
+
+.section-head p {
+  color: var(--muted);
+
+  max-width: 590px;
+
+  line-height: 1.65;
+
+  margin: 0;
+}
+
+/* =========================
+   FILTERS
+========================= */
+
+.filters {
+  display: flex;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 32px;
+}
+
+.filter {
+  border: 1px solid var(--line);
+
+  background: var(--paper);
+
+  padding: 11px 18px;
+
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  font:
+    600 14px "DM Sans",
+    sans-serif;
+
+  transition: 0.2s ease;
+}
+
+.filter.active,
+.filter:hover {
+  background: var(--ink);
+
+  color: white;
+
+  border-color: var(--ink);
+}
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.product-card {
+  background: var(--paper);
+
+  border: 1px solid var(--line);
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 18px 45px rgba(60, 35, 20, 0.1);
+}
+
+.product-image-wrap {
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  background: #f2ece5;
+
+  overflow: hidden;
+}
+
+.product-image-wrap img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.35s ease;
+}
+
+.product-card:hover .product-image-wrap img {
+  transform: scale(1.035);
+}
+
+/* =========================
+   PRODUCT INFO
+========================= */
+
+.product-info {
+  padding: 20px;
+}
+
+.tag {
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+
+  color: var(--accent);
+
+  font-weight: 700;
+}
+
+.product-info h3 {
+  font:
+    600 21px "Playfair Display",
+    serif;
+
+  margin: 9px 0 8px;
+
+  line-height: 1.2;
+}
+
+.product-info p {
+  font-size: 14px;
+
+  color: var(--muted);
+
+  line-height: 1.55;
+
+  min-height: 44px;
+
+  margin: 0;
+}
+
+/* =========================
+   PRICE + CUSTOM ORDER + CART
+========================= */
+
+/* =========================
+   PRICE + CUSTOM ORDER + CART
+========================= */
+
+.product-bottom {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  margin-top: 17px;
+}
+
+.product-price {
+  font-size: 17px;
+
+  font-weight: 700;
+
+  color: var(--ink);
+
+  white-space: nowrap;
+
+  flex-shrink: 0;
+}
+
+.order-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  margin: 0;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  color: var(--accent);
+
+  white-space: nowrap;
+
+  transition: color 0.2s ease;
+}
+
+.order-link:hover {
+  color: var(--ink);
+}
+
+/* =========================
+   SMALL PRODUCT CART BUTTON
+========================= */
+
+.cart-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  padding: 7px 9px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 8px;
+
+  background: var(--paper);
+
+  color: var(--ink);
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.cart-btn:hover {
+  background: var(--ink);
+
+  color: white;
+
+  border-color: var(--ink);
+
+  transform: translateY(-1px);
+}
+
+/* =========================
+   NAVBAR CART
+========================= */
+
+.navbar-cart {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 9px 13px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 999px;
+
+  background: var(--paper);
+
+  color: var(--ink);
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition: 0.2s ease;
+}
+
+.navbar-cart:hover {
+  background: var(--ink);
+
+  color: white;
+
+  border-color: var(--ink);
+}
+
+#cartCount {
+  min-width: 21px;
+  height: 21px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 6px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  color: white;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+/* =========================
+   CART PANEL
+========================= */
+
+.cart-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(36, 27, 23, 0.35);
+
+  z-index: 999;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition: 0.25s ease;
+}
+
+.cart-overlay.active {
+  opacity: 1;
+
+  visibility: visible;
+}
+
+.cart-panel {
+  position: fixed;
+
+  top: 0;
+  right: 0;
+
+  width: min(420px, 92vw);
+
+  height: 100vh;
+
+  background: var(--paper);
+
+  z-index: 1000;
+
+  transform: translateX(100%);
+
+  transition: transform 0.3s ease;
+
+  display: flex;
+
+  flex-direction: column;
+
+  box-shadow: -15px 0 50px rgba(36, 27, 23, 0.15);
+}
+
+.cart-panel.active {
+  transform: translateX(0);
+}
+
+/* =========================
+   CART HEADER
+========================= */
+
+.cart-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 22px;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.cart-header h2 {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 28px;
+}
+
+.cart-close {
+  width: 36px;
+  height: 36px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: var(--ink);
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.cart-close:hover {
+  background: var(--ink);
+
+  color: white;
+}
+
+/* =========================
+   CART ITEMS
+========================= */
+
+.cart-items {
+  flex: 1;
+
+  overflow-y: auto;
+
+  padding: 18px 22px;
+}
+
+.empty-cart {
+  text-align: center;
+
+  color: var(--muted);
+
+  padding: 50px 20px;
+}
+
+.cart-item {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding: 16px 0;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-item-name {
+  font-family: "Playfair Display", serif;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  margin-bottom: 5px;
+}
+
+.cart-item-price {
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+.cart-quantity {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+.quantity-btn {
+  width: 27px;
+  height: 27px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 6px;
+
+  background: var(--paper);
+
+  cursor: pointer;
+
+  font-weight: 700;
+}
+
+.quantity-btn:hover {
+  background: var(--ink);
+
+  color: white;
+}
+
+.quantity-number {
+  min-width: 18px;
+
+  text-align: center;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.remove-item {
+  border: 0;
+
+  background: transparent;
+
+  color: var(--muted);
+
+  cursor: pointer;
+
+  font-size: 12px;
+
+  margin-left: 4px;
+}
+
+.remove-item:hover {
+  color: var(--accent);
+}
+
+/* =========================
+   CART FOOTER
+========================= */
+
+.cart-footer {
+  padding: 20px 22px;
+
+  border-top: 1px solid var(--line);
+
+  background: var(--paper);
+}
+
+.cart-total {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 15px;
+
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+.checkout-btn {
+  width: 100%;
+
+  padding: 13px 18px;
+
+  border: 1px solid var(--ink);
+
+  border-radius: 999px;
+
+  background: var(--ink);
+
+  color: white;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.checkout-btn:hover {
+  transform: translateY(-2px);
+
+  opacity: 0.9;
+}
+
+/* =========================
+   CART BUTTON
+========================= */
+
+.cart-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  padding: 7px 10px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 8px;
+
+  background: var(--paper);
+
+  color: var(--ink);
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cart-btn:hover {
+  background: var(--ink);
+
+  color: white;
+
+  border-color: var(--ink);
+
+  transform: translateY(-1px);
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+  background: var(--ink);
+
+  color: white;
+
+  margin-top: 10px;
+}
+
+.about-inner {
+  width: calc(100% - 64px);
+
+  max-width: 1325px;
+
+  margin: 0 auto;
+
+  padding: 78px 0;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 70px;
+}
+
+.about h2 {
+  font:
+    600 52px "Playfair Display",
+    serif;
+
+  margin: 0 0 18px;
+}
+
+.about p {
+  color: #d8ccc5;
+
+  line-height: 1.8;
+
+  margin: 0;
+
+  max-width: 620px;
+}
+
+.points {
+  display: grid;
+
+  gap: 16px;
+}
+
+.point {
+  border: 1px solid #4b3b34;
+
+  border-radius: 18px;
+
+  padding: 21px;
+}
+
+.point strong {
+  display: block;
+
+  margin-bottom: 6px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+  background: #f0e6dc;
+}
+
+.contact-box {
+  max-width: 900px;
+
+  margin: auto;
+
+  text-align: center;
+
+  background: var(--paper);
+
+  border: 1px solid var(--line);
+
+  border-radius: 30px;
+
+  padding: 55px 30px;
+}
+
+.contact-box h2 {
+  font:
+    600 48px "Playfair Display",
+    serif;
+
+  margin: 0 0 14px;
+}
+
+.contact-box p {
+  color: var(--muted);
+
+  line-height: 1.7;
+
+  margin: 0 auto;
+
+  max-width: 740px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  padding: 28px 20px;
+
+  text-align: center;
+
+  color: var(--muted);
+
+  font-size: 13px;
+
+  border-top: 1px solid var(--line);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1400px) {
+  .nav-inner,
+  .hero,
+  .section,
+  .about-inner {
+    width: calc(100% - 64px);
+  }
+}
+
+@media (max-width: 1000px) {
+  .hero,
+  .about-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+  }
+
+  .section-head {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  .navlinks {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 650px) {
+  .nav-inner {
+    width: calc(100% - 32px);
+
+    min-height: 70px;
+
+    grid-template-columns: auto 1fr auto;
+
+    gap: 10px;
+  }
+
+  /* Hide center links on mobile */
+
+  .navlinks {
+    display: none;
+  }
+
+  /* Brand */
+
+  .brand-mark {
+    width: 46px;
+
+    height: 46px;
+  }
+
+  .brand span {
+    font-size: 22px;
+  }
+
+  /* Right buttons */
+
+  .nav-actions {
+    gap: 5px;
+  }
+
+  .navbar-cart,
+  .login-btn {
+    padding: 8px 10px;
+
+    font-size: 12px;
+  }
+
+  /* Hide text and keep icons */
+
+  .navbar-cart > span:nth-child(2),
+  .login-btn > span:nth-child(2) {
+    display: none;
+  }
+
+  /* Main sections */
+
+  .hero,
+  .section,
+  .about-inner {
+    width: calc(100% - 32px);
+  }
+
+  .hero {
+    padding: 50px 0 60px;
+  }
+
+  .hero-logo {
+    padding: 20px;
+  }
+
+  /* Product grid */
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+  }
+
+  /* Product information */
+
+  .product-info {
+    padding: 14px;
+  }
+
+  .product-info h3 {
+    font-size: 17px;
+  }
+
+  .product-info p {
+    font-size: 12px;
+  }
+
+  /* Price + Order + Cart */
+
+  .product-bottom {
+    gap: 4px;
+  }
+
+  .product-price {
+    font-size: 14px;
+  }
+
+  .order-link {
+    font-size: 10px;
+  }
+
+  .cart-btn {
+    font-size: 10px;
+
+    padding: 6px 7px;
+  }
+
+  /* About */
+
+  .about-inner {
+    padding: 60px 0;
+  }
+
+  .about h2 {
+    font-size: 40px;
+  }
+
+  /* Contact */
+
+  .contact-box {
+    padding: 42px 18px;
+  }
+
+  .contact-box h2 {
+    font-size: 38px;
+  }
+
+  /* Login */
+
+  .login-box {
+    width: calc(100% - 20px);
+
+    padding: 35px 22px 25px;
+  }
+
+  .login-box h2 {
+    font-size: 26px;
+  }
+}
