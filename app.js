@@ -282,7 +282,6 @@ paymentOverlay.addEventListener("click", (event) => {
     closePaymentModal();
   }
 });
-
 continueToWhatsAppButton.addEventListener("click", () => {
   if (cart.length === 0) {
     alert("Your cart is empty.");
@@ -290,11 +289,39 @@ continueToWhatsAppButton.addEventListener("click", () => {
     return;
   }
 
-  closePaymentModal();
+  let message =
+    "Hello DS Creations! 👋\n\n" + "I would like to place an order:\n\n";
 
-  if (existingWhatsAppCheckout) {
-    existingWhatsAppCheckout.click();
+  let total = 0;
+
+  cart.forEach((item) => {
+    const price = getNumericPrice(item.price);
+    total += price * item.quantity;
+
+    message +=
+      `• ${item.name}\n` +
+      `  Quantity: ${item.quantity}\n` +
+      `  Price: ${item.price}\n\n`;
+  });
+
+  message += `Total: ₹${total.toLocaleString("en-IN")}\n\n`;
+
+  const savedName = localStorage.getItem("dsCreationsUserName");
+
+  if (savedName) {
+    message += `Name: ${savedName}\n\n`;
   }
+
+  message +=
+    "I have completed the payment using the QR code. " +
+    "Please confirm my order. Thank you!";
+
+  const whatsappURL =
+    "https://wa.me/919699608447?text=" + encodeURIComponent(message);
+
+  window.open(whatsappURL, "_blank");
+
+  closePaymentModal();
 });
 
 /* =========================
@@ -610,7 +637,9 @@ if (checkoutBtn) {
       message += `Name: ${savedName}\n\n`;
     }
 
-    message += "Please confirm the order. Thank you!";
+    message +=
+      "I have completed the payment using the QR code. " +
+      "Please confirm my order. Thank you!";
 
     const whatsappURL =
       "https://wa.me/919699608447?text=" + encodeURIComponent(message);
